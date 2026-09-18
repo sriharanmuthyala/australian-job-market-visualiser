@@ -58,6 +58,20 @@ a:hover{text-decoration-color:var(--up)}
 .field{width:100%;font:inherit;font-size:13.5px;color:var(--fg);background:#fff;
   border:1px solid var(--line);border-radius:4px;padding:7px 9px;margin-bottom:8px}
 .field:last-child{margin-bottom:0}
+.filter-label{display:block;font-size:10px;letter-spacing:.08em;color:var(--dimmer);margin:9px 0 4px}
+.filter-label:first-of-type{margin-top:0}
+.filter-reset{width:100%;font:inherit;font-size:12.5px;border:1px solid var(--line);background:#fff;color:var(--dim);
+  border-radius:4px;padding:7px 9px;cursor:pointer;margin-top:2px}
+.filter-reset:hover{color:var(--fg);border-color:var(--line2)}
+.filter-status{font-size:11.5px;color:var(--dimmer);margin-top:8px;line-height:1.35}
+.data-key{display:flex;gap:8px;flex-wrap:wrap;margin:11px 0 0}
+.data-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--panel);
+  border-radius:999px;padding:4px 9px;font-size:11.5px;color:var(--dim)}
+.data-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--up)}
+.data-chip.experimental::before{background:var(--hot)}
+.empty-state{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;
+  color:var(--dim);font-size:14px;padding:30px}
+.layer-tag{font-size:9px;color:var(--dimmer);margin-left:auto;font-weight:500;letter-spacing:.05em}
 :focus-visible{outline:2px solid var(--up);outline-offset:1px}
 
 .movers{font-size:12.5px}
@@ -126,18 +140,21 @@ footer a{color:var(--dim)}
 
 <div class="mast">
   <h1>Where Australia Works</h1>
-  <span class="sub">14.4 million jobs, one rectangle at a time</span>
+  <span class="sub">Australia’s workforce, one occupation at a time</span>
   <span class="who">Built by Sri Muthyala &amp; Natasha</span>
 </div>
 
-<p class="blurb">Every rectangle below is one ANZSCO occupation, sized by how many Australians do it.
-Recolour the map from the rail on the left: the official five- and ten-year outlook from
-<a href="https://www.jobsandskills.gov.au/data/employment-projections" target="_blank" rel="noopener">Jobs and Skills Australia</a>,
-the skill level it sits at, or how much of it a language model thinks AI can already do.
-Click a tile for its JSA profile, click a group heading to zoom into it.
-<b>The last layer is a guess, and the first two contain no AI at all</b> — JSA says plainly
-that its projections extend existing trends without modelling generative AI. Putting the two
-side by side is the point of building this.</p>
+<p class="blurb">Explore how Australia’s workforce is distributed today and how occupations are projected
+to change through 2035. Each rectangle is an ANZSCO occupation, sized by employment. Use the controls to
+compare <b>official Jobs and Skills Australia / ABS measures</b> — employment outlook, skill level and median
+weekly earnings — with an <b>experimental AI task-exposure estimate</b>. The AI layer is not a forecast of job
+loss: it estimates how much the task mix of an occupation may be affected by current and near-term AI, while
+actual employment also depends on demand, regulation, human interaction, physical work and other factors.
+Click a tile for its JSA profile, or a group heading to zoom in.</p>
+<div class="data-key" aria-label="Data provenance">
+  <span class="data-chip">Official data · JSA / ABS</span>
+  <span class="data-chip experimental">Experimental · AI task exposure</span>
+</div>
 
 <div class="ticker" id="ticker"></div>
 
@@ -149,9 +166,41 @@ side by side is the point of building this.</p>
       <div id="legend" style="margin-top:11px"></div>
     </div>
     <div class="card">
-      <h3>FILTER</h3>
-      <input type="search" id="q" class="field" placeholder="Find an occupation…" autocomplete="off">
-      <select id="group" class="field"><option value="">Every occupation group</option></select>
+      <h3>EXPLORE</h3>
+      <label class="filter-label" for="q">OCCUPATION</label>
+      <input type="search" id="q" class="field" placeholder="Search occupations…" autocomplete="off">
+
+      <label class="filter-label" for="group">OCCUPATION GROUP</label>
+      <select id="group" class="field"><option value="">All groups</option></select>
+
+      <label class="filter-label" for="skill">SKILL LEVEL</label>
+      <select id="skill" class="field">
+        <option value="">All skill levels</option>
+        <option value="1">Level 1 · Bachelor or above</option>
+        <option value="2">Level 2 · Diploma</option>
+        <option value="3">Level 3 · Certificate III/IV</option>
+        <option value="4">Level 4 · Certificate II/III</option>
+        <option value="5">Level 5 · Certificate I or school</option>
+      </select>
+
+      <label class="filter-label" for="outlook">10-YEAR OUTLOOK</label>
+      <select id="outlook" class="field">
+        <option value="">Any outlook</option>
+        <option value="growing">Growing · 5%+</option>
+        <option value="flat">Broadly flat · -5% to +5%</option>
+        <option value="declining">Declining · below -5%</option>
+      </select>
+
+      <label class="filter-label" for="size">WORKFORCE SIZE</label>
+      <select id="size" class="field">
+        <option value="0">Any size</option>
+        <option value="10000">10,000+ workers</option>
+        <option value="50000">50,000+ workers</option>
+        <option value="100000">100,000+ workers</option>
+      </select>
+
+      <button class="filter-reset" id="resetFilters" type="button">Reset filters</button>
+      <div class="filter-status" id="filterStatus"></div>
     </div>
     <div class="card movers" id="movers"><h3>BIGGEST MOVERS</h3></div>
   </div>
@@ -163,20 +212,20 @@ side by side is the point of building this.</p>
 </div>
 
 <details class="note">
-  <summary>The prompt behind the AI exposure layer</summary>
+  <summary>Methodology · the prompt behind the experimental AI task-exposure layer</summary>
   <pre id="promptText"></pre>
 </details>
 
 <footer>
   Employment and projections: Jobs and Skills Australia, <i>Employment Projections May 2025 to May 2035</i>,
   modelled by Victoria University. Occupations are ANZSCO 4-digit unit groups with "not further defined"
-  residuals removed, so totals sit slightly below the 14.70M national figure. AI exposure is a language
-  model's judgement scored from the prompt above — a rough estimate, not a forecast, and a high score
-  means the work changes shape rather than disappears. Median pay needs a separate scrape of the JSA
-  occupation profiles and is off until then.
-  Built after seeing Andrej Karpathy's
-  <a href="https://karpathy.ai/jobs/" target="_blank" rel="noopener">US Job Market Visualizer</a>,
-  which is the same idea pointed at BLS data.
+  residuals removed, so totals sit slightly below the 14.70M national figure. Median weekly earnings are an
+  interim official JSA/ABS profile snapshot (May 2023 earnings period) and are unavailable for some occupations;
+  we plan to refresh this layer to the newer JSA release. AI task exposure is an experimental model judgement,
+  not an employment forecast: a high score means more of the task mix may change, not that the occupation disappears.
+  Inspired by Andrej Karpathy's
+  <a href="https://karpathy.ai/jobs/" target="_blank" rel="noopener">US Job Market Visualizer</a>;
+  adapted for Australian labour-market data by Sri Muthyala &amp; Natasha.
 </footer>
 </div>
 
@@ -228,10 +277,10 @@ const LAYERS=[
    get:d=>d.growth_10y,fmt:v=>v==null?"—":sgn1(v),tileFmt:v=>sgn(v),
    colour:v=>v==null?NODATA:ramp(OUT,(v+10)/46),
    legend:{lo:"Shrinking",hi:"Growing",css:css(OUT)}},
-  {id:"ai_exposure",label:"AI exposure",swatch:css(AIR),
-   get:d=>d.ai_exposure,fmt:v=>v==null?"—":v.toFixed(1)+"/10",tileFmt:v=>v.toFixed(0)+"/10",
-   colour:v=>v==null?NODATA:ramp(AIR,v/10),
-   legend:{lo:"Barely touched",hi:"Reshaped",css:css(AIR)}},
+  {id:"pay_weekly",label:"Median weekly pay",swatch:css(PAYR),
+   get:d=>d.pay_weekly,fmt:v=>v==null?"—":"$"+v.toLocaleString(),tileFmt:v=>"$"+Math.round(v/100)*100,
+   colour:v=>v==null?NODATA:ramp(PAYR,(v-900)/2100),
+   legend:{lo:"$900",hi:"$3,000+",css:css(PAYR)}},
   {id:"skill_level",label:"Skill level",swatch:`linear-gradient(90deg,${Object.values(SKILLC).join(",")})`,
    get:d=>d.skill_level,fmt:v=>v==null?"—":"Level "+v,tileFmt:v=>"L"+v,
    colour:v=>SKILLC[v]||NODATA,
@@ -241,13 +290,13 @@ const LAYERS=[
    colour:v=>GRPC[v]||NODATA,
    cats:[["1","Managers"],["2","Professionals"],["3","Technicians & trades"],["4","Community & personal service"],
          ["5","Clerical & administrative"],["6","Sales"],["7","Machinery operators & drivers"],["8","Labourers"]],map:GRPC},
-  {id:"pay_weekly",label:"Median weekly pay",swatch:css(PAYR),
-   get:d=>d.pay_weekly,fmt:v=>v==null?"—":"$"+v.toLocaleString(),tileFmt:v=>"$"+Math.round(v/100)*100,
-   colour:v=>v==null?NODATA:ramp(PAYR,(v-900)/2100),
-   legend:{lo:"$900",hi:"$3,000+",css:css(PAYR)}}
+  {id:"ai_exposure",label:"AI task exposure",experimental:true,swatch:css(AIR),
+   get:d=>d.ai_exposure,fmt:v=>v==null?"—":v.toFixed(1)+"/10",tileFmt:v=>v.toFixed(0)+"/10",
+   colour:v=>v==null?NODATA:ramp(AIR,v/10),
+   legend:{lo:"Lower exposure",hi:"Higher exposure",css:css(AIR)}}
 ];
 
-let DATA=null,LAYER=LAYERS[0],GROUP="",QUERY="";
+let DATA=null,LAYER=LAYERS[0],GROUP="",QUERY="",SKILL="",OUTLOOK="",SIZE=0;
 const map=$("#map"),tip=$("#tip");
 
 /* ---------- squarified treemap ---------- */
@@ -286,8 +335,10 @@ function buildRail(){
     const b=document.createElement("button");
     b.type="button"; b.disabled=!live(l);
     b.setAttribute("aria-pressed",String(l.id===LAYER.id));
-    b.innerHTML=`<i style="background:${l.swatch}"></i><span>${l.label}</span>`;
-    if(b.disabled) b.title="Needs a pipeline step to fill this field";
+    const payPeriod=l.id==="pay_weekly"&&DATA?.meta?.pay_reference_period ? " · "+DATA.meta.pay_reference_period : "";
+    const tag=l.experimental ? '<span class="layer-tag">EXPERIMENTAL</span>' : "";
+    b.innerHTML=`<i style="background:${l.swatch}"></i><span>${l.label}${payPeriod}</span>${tag}`;
+    if(b.disabled) b.title="No data available for this layer";
     b.onclick=()=>{LAYER=l;buildRail();render();};
     box.appendChild(b);
   });
@@ -309,13 +360,13 @@ function buildTicker(rows){
   const aiHigh=ai.filter(d=>d.ai_exposure>=7).reduce((s,d)=>s+d.emp_2025,0);
   const aiTot=ai.reduce((s,d)=>s+d.emp_2025,0);
   $("#ticker").innerHTML=`
-    <div><span>JOBS ON THE MAP</span><strong>${jobs(total)}</strong><em>${rows.length} occupations</em></div>
+    <div><span>JOBS SHOWN</span><strong>${jobs(total)}</strong><em>${rows.length} occupations</em></div>
     <div><span>AVERAGE OUTLOOK</span><strong class="${avg<0?"down":"up"}">${sgn1(avg)}</strong>
       <em>job-weighted, ${f==="growth_10y"?"to 2035":"to 2030"}</em></div>
     <div><span>IN SHRINKING ROLES</span><strong class="down">${jobs(dec)}</strong>
-      <em>${Math.round(dec/total*100)}% of these jobs</em></div>
-    ${aiTot?`<div><span>HIGH AI EXPOSURE</span><strong class="hot">${jobs(aiHigh)}</strong>
-      <em>scored 7+ out of 10</em></div>`:""}`;
+      <em>${total?Math.round(dec/total*100):0}% of jobs shown</em></div>
+    ${aiTot?`<div><span>HIGH AI TASK EXPOSURE</span><strong class="hot">${jobs(aiHigh)}</strong>
+      <em>experimental score 7+ / 10</em></div>`:""}`;
 }
 
 function buildMovers(rows){
@@ -360,13 +411,42 @@ function buildDist(rows){
 
 const jsaUrl=d=>d.url||"https://www.jobsandskills.gov.au/data/occupation-and-industry-profiles?search="+encodeURIComponent(d.name);
 
+function filteredRows(){
+  return DATA.occupations.filter(d=>{
+    if(GROUP && String(d.major)!==GROUP) return false;
+    if(QUERY && !(d.name||"").toLowerCase().includes(QUERY)) return false;
+    if(SKILL && String(d.skill_level)!==SKILL) return false;
+    if(SIZE && (d.emp_2025||0)<SIZE) return false;
+    if(OUTLOOK){
+      const v=d.growth_10y;
+      if(v==null) return false;
+      if(OUTLOOK==="growing" && v<5) return false;
+      if(OUTLOOK==="flat" && (v<-5 || v>=5)) return false;
+      if(OUTLOOK==="declining" && v>=-5) return false;
+    }
+    return true;
+  });
+}
+
+function updateFilterStatus(rows){
+  const jobsShown=rows.reduce((s,d)=>s+(d.emp_2025||0),0);
+  $("#filterStatus").textContent=`Showing ${rows.length} occupations · ${jobs(jobsShown)} jobs`;
+}
+
 function render(){
   if(!DATA) return;
-  const rows=DATA.occupations.filter(d=>!GROUP||String(d.major)===GROUP);
-  buildTicker(rows); buildMovers(rows); buildDist(rows);
-  map.querySelectorAll(".grp").forEach(n=>n.remove());
+  const rows=filteredRows();
+  buildTicker(rows); buildMovers(rows); buildDist(rows); updateFilterStatus(rows);
+  map.querySelectorAll(".grp,.empty-state").forEach(n=>n.remove());
   const W=map.clientWidth,H=map.clientHeight;
   if(!W||!H) return;
+  if(!rows.length){
+    const empty=document.createElement("div");
+    empty.className="empty-state";
+    empty.innerHTML="<div><b>No occupations match these filters.</b><br>Try widening the outlook, skill level or workforce-size selection.</div>";
+    map.appendChild(empty);
+    return;
+  }
 
   const by=new Map();
   rows.forEach(d=>{const k=String(d.major);if(!by.has(k))by.set(k,[]);by.get(k).push(d);});
@@ -414,8 +494,7 @@ function render(){
 }
 
 function paint(){
-  map.querySelectorAll(".tile").forEach(el=>
-    el.classList.toggle("dim",!!QUERY&&!el.dataset.name.includes(QUERY)));
+  map.querySelectorAll(".tile").forEach(el=>el.classList.remove("dim"));
 }
 
 function showTip(e,d){
@@ -427,7 +506,7 @@ function showTip(e,d){
     ["Outlook to 2035",d.growth_10y!=null?sgn1(d.growth_10y):null],
     ["Skill level",d.skill_levels||d.skill_level||null],
     ["Median weekly pay",d.pay_weekly?"$"+d.pay_weekly.toLocaleString():null],
-    ["AI exposure",d.ai_exposure!=null?d.ai_exposure.toFixed(0)+"/10":null]
+    ["AI task exposure · experimental",d.ai_exposure!=null?d.ai_exposure.toFixed(0)+"/10":null]
   ].filter(x=>x[1]!=null&&x[1]!=="").map(x=>`<dt>${x[0]}</dt><dd>${x[1]}</dd>`).join("");
   tip.innerHTML=`<h4>${d.name}</h4><code>ANZSCO ${d.code}</code><dl>${r}</dl>`;
   tip.style.display="block";
@@ -443,13 +522,22 @@ function setData(obj){
   DATA.occupations=DATA.occupations.filter(d=>(d.emp_2025||0)>0);
   if(!live(LAYER)) LAYER=LAYERS.find(live)||LAYERS[0];
   const gs=[...new Map(DATA.occupations.map(d=>[d.major,d.major_name||d.major])).entries()].sort();
-  const sel=$("#group"); sel.innerHTML='<option value="">Every occupation group</option>';
+  const sel=$("#group"); sel.innerHTML='<option value="">All groups</option>';
   gs.forEach(([k,v])=>{const o=document.createElement("option");o.value=k;o.textContent=v;sel.appendChild(o);});
   buildRail(); render();
 }
 
 $("#group").onchange=e=>{GROUP=e.target.value;render();};
-$("#q").oninput=e=>{QUERY=e.target.value.trim().toLowerCase();paint();};
+$("#skill").onchange=e=>{SKILL=e.target.value;render();};
+$("#outlook").onchange=e=>{OUTLOOK=e.target.value;render();};
+$("#size").onchange=e=>{SIZE=Number(e.target.value)||0;render();};
+$("#q").oninput=e=>{QUERY=e.target.value.trim().toLowerCase();render();};
+$("#resetFilters").onclick=()=>{
+  GROUP=""; QUERY=""; SKILL=""; OUTLOOK=""; SIZE=0;
+  $("#group").value=""; $("#q").value=""; $("#skill").value="";
+  $("#outlook").value=""; $("#size").value="0";
+  render();
+};
 ["dragenter","dragover"].forEach(ev=>map.addEventListener(ev,e=>e.preventDefault()));
 map.addEventListener("drop",e=>{
   e.preventDefault(); const f=e.dataTransfer.files[0]; if(!f) return;
