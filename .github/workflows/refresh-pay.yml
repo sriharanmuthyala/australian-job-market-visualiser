@@ -1,0 +1,42 @@
+name: Refresh median weekly earnings
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "enrich_pay.py"
+      - ".github/workflows/refresh-pay.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-pay:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependency
+        run: python -m pip install --disable-pip-version-check openpyxl
+
+      - name: Merge official JSA pay data
+        run: python enrich_pay.py data.json
+
+      - name: Commit refreshed data
+        run: |
+          if git diff --quiet -- data.json; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git commit -m "Refresh median weekly earnings from JSA"
+          git push
