@@ -201,6 +201,51 @@ select.field{cursor:pointer}
 .guide p:last-child{margin-bottom:0}
 .guide b{color:var(--fg);font-weight:600}
 
+/* ---- supporting charts ---- */
+.charts-section{margin-top:22px}
+.charts-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:10px}
+.charts-head h2{font-family:"Space Grotesk",sans-serif;font-size:20px;letter-spacing:-.02em;margin:0}
+.charts-head p{margin:2px 0 0;color:var(--dim);font-size:11.5px}
+.charts-head .chart-note{color:var(--dimmer);font-size:10.5px;white-space:nowrap}
+.chart-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.chart-card{
+  border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.018);
+  padding:14px 15px;min-width:0
+}
+.chart-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
+.chart-card h3{font-size:10px;letter-spacing:.12em;color:var(--dimmer);margin:0;font-weight:600}
+.chart-sub{font-size:10.5px;color:var(--dimmer);margin-top:3px}
+.chart-count{font-family:"Space Grotesk",sans-serif;font-size:11px;color:var(--dim);white-space:nowrap}
+.bar-chart{display:flex;flex-direction:column;gap:7px}
+.bar-row{
+  display:grid;grid-template-columns:minmax(132px,190px) minmax(100px,1fr) 58px;
+  gap:9px;align-items:center;cursor:pointer
+}
+.bar-row:hover .bar-label{color:var(--fg)}
+.bar-label{font-size:10.5px;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-track{height:11px;background:#0d1319;border:1px solid #202b35;border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px;min-width:2px}
+.bar-value{font-family:"Space Grotesk",sans-serif;font-size:10.5px;color:var(--fg);text-align:right}
+.scatter-wrap{position:relative;width:100%;height:310px}
+.scatter-wrap svg{width:100%;height:100%;display:block;overflow:visible}
+.scatter-grid{stroke:#26313d;stroke-width:1}
+.scatter-axis{stroke:#465361;stroke-width:1}
+.scatter-label{fill:#71808d;font-size:9.5px;font-family:Inter,system-ui,sans-serif}
+.scatter-dot{cursor:pointer;stroke:#0b0f14;stroke-width:1.2;opacity:.82}
+.scatter-dot:hover{opacity:1;stroke:#fff;stroke-width:1.6}
+.scatter-ref{stroke:#697787;stroke-width:1;stroke-dasharray:4 4;opacity:.55}
+.chart-empty{height:220px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--dimmer);font-size:12px}
+
+@media (max-width:900px){
+  .chart-grid{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .charts-head{align-items:flex-start;flex-direction:column}
+  .charts-head .chart-note{white-space:normal}
+  .bar-row{grid-template-columns:minmax(105px,145px) minmax(80px,1fr) 52px}
+  .scatter-wrap{height:280px}
+}
+
 /* ---- tooltip / methodology ---- */
 #tip{
   position:fixed;z-index:30;display:none;pointer-events:none;max-width:330px;
@@ -352,6 +397,41 @@ Median weekly earnings come from JSA occupation profiles using ABS earnings data
     <p><b>Size answers “how many people?”</b> Larger rectangles represent more employment in May 2025.</p>
     <p><b>Colour answers a different question.</b> Switch between official outlook, pay and skill measures, or the experimental AI task-exposure score.</p>
     <p><b>AI exposure is not redundancy risk.</b> It describes potential task change, not whether employment will rise or fall.</p>
+  </div>
+</section>
+
+<section class="charts-section">
+  <div class="charts-head">
+    <div>
+      <div class="eyebrow">SUPPORTING VIEWS</div>
+      <h2>See the patterns behind the treemap</h2>
+      <p>These charts update with the same filters as the main visual.</p>
+    </div>
+    <div class="chart-note">Official labour-market measures + experimental AI layer</div>
+  </div>
+
+  <div class="chart-grid">
+    <article class="chart-card">
+      <div class="chart-card-head">
+        <div>
+          <h3>JOBS BY OCCUPATION GROUP</h3>
+          <div class="chart-sub">Current employment represented in the filtered view</div>
+        </div>
+        <div class="chart-count" id="groupChartCount"></div>
+      </div>
+      <div class="bar-chart" id="groupChart"></div>
+    </article>
+
+    <article class="chart-card">
+      <div class="chart-card-head">
+        <div>
+          <h3>MEDIAN WEEKLY PAY VS AI TASK EXPOSURE</h3>
+          <div class="chart-sub">Each dot is an occupation · AI score is experimental</div>
+        </div>
+        <div class="chart-count" id="scatterCount"></div>
+      </div>
+      <div class="scatter-wrap" id="payAiChart"></div>
+    </article>
   </div>
 </section>
 
@@ -555,6 +635,100 @@ function buildDist(rows){
       `<span><i style="background:${p.t.c}"></i>${p.t.label} · ${jobs(p.j)}</span>`).join("")}</div>`;
 }
 
+function buildGroupChart(rows){
+  const box=$("#groupChart"), count=$("#groupChartCount");
+  const grouped=new Map();
+  rows.forEach(d=>{
+    const key=String(d.major), prev=grouped.get(key)||{key,name:d.major_name||key,jobs:0};
+    prev.jobs+=d.emp_2025||0;
+    grouped.set(key,prev);
+  });
+  const data=[...grouped.values()].sort((a,b)=>b.jobs-a.jobs);
+  const max=data.length?data[0].jobs:1;
+  count.textContent=data.length ? data.length+" groups" : "";
+  if(!data.length){
+    box.innerHTML='<div class="chart-empty">No occupation groups match the current filters.</div>';
+    return;
+  }
+  box.innerHTML=data.map(g=>`
+    <div class="bar-row" data-group="${g.key}" title="Filter to ${g.name}">
+      <div class="bar-label">${g.name}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${(g.jobs/max*100).toFixed(1)}%;background:${GRPC[g.key]||NODATA}"></div></div>
+      <div class="bar-value">${jobs(g.jobs)}</div>
+    </div>`).join("");
+  box.querySelectorAll(".bar-row").forEach(el=>{
+    el.onclick=()=>{
+      GROUP=el.dataset.group;
+      $("#group").value=GROUP;
+      render();
+      map.scrollIntoView({behavior:"smooth",block:"start"});
+    };
+  });
+}
+
+function median(vals){
+  const a=vals.filter(v=>Number.isFinite(v)).sort((x,y)=>x-y);
+  if(!a.length) return null;
+  const m=Math.floor(a.length/2);
+  return a.length%2?a[m]:(a[m-1]+a[m])/2;
+}
+
+function buildPayAiChart(rows){
+  const host=$("#payAiChart"), count=$("#scatterCount");
+  const pts=rows.filter(d=>d.pay_weekly!=null&&d.ai_exposure!=null&&Number.isFinite(+d.pay_weekly)&&Number.isFinite(+d.ai_exposure));
+  count.textContent=pts.length ? pts.length+" occupations" : "";
+  if(!pts.length){
+    host.innerHTML='<div class="chart-empty">Pay data is not available for the occupations in this filtered view.</div>';
+    return;
+  }
+
+  const W=Math.max(520,host.clientWidth||520), H=Math.max(280,host.clientHeight||310);
+  const pad={l:52,r:16,t:14,b:38};
+  const iw=W-pad.l-pad.r, ih=H-pad.t-pad.b;
+  const maxPay=Math.max(...pts.map(d=>+d.pay_weekly));
+  const xMax=Math.max(1500,Math.ceil(maxPay/500)*500);
+  const x=v=>pad.l+(v/xMax)*iw;
+  const y=v=>pad.t+ih-(v/10)*ih;
+  const medPay=median(pts.map(d=>+d.pay_weekly));
+  const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+
+  let svg=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Scatter plot of median weekly pay against experimental AI task exposure">`;
+
+  [0,2,4,6,8,10].forEach(v=>{
+    const yy=y(v);
+    svg+=`<line class="scatter-grid" x1="${pad.l}" y1="${yy}" x2="${W-pad.r}" y2="${yy}"></line>`;
+    svg+=`<text class="scatter-label" x="${pad.l-9}" y="${yy+3}" text-anchor="end">${v}</text>`;
+  });
+  const xTicks=4;
+  for(let i=0;i<=xTicks;i++){
+    const v=xMax*i/xTicks, xx=x(v);
+    svg+=`<line class="scatter-grid" x1="${xx}" y1="${pad.t}" x2="${xx}" y2="${pad.t+ih}"></line>`;
+    svg+=`<text class="scatter-label" x="${xx}" y="${H-17}" text-anchor="middle">${Math.round(v).toLocaleString()}</text>`;
+  }
+
+  svg+=`<line class="scatter-axis" x1="${pad.l}" y1="${pad.t+ih}" x2="${W-pad.r}" y2="${pad.t+ih}"></line>`;
+  svg+=`<line class="scatter-axis" x1="${pad.l}" y1="${pad.t}" x2="${pad.l}" y2="${pad.t+ih}"></line>`;
+  svg+=`<line class="scatter-ref" x1="${pad.l}" y1="${y(7)}" x2="${W-pad.r}" y2="${y(7)}"></line>`;
+  if(medPay!=null) svg+=`<line class="scatter-ref" x1="${x(medPay)}" y1="${pad.t}" x2="${x(medPay)}" y2="${pad.t+ih}"></line>`;
+
+  svg+=`<text class="scatter-label" x="${pad.l+iw/2}" y="${H-3}" text-anchor="middle">Median weekly pay (AUD)</text>`;
+  svg+=`<text class="scatter-label" x="12" y="${pad.t+ih/2}" text-anchor="middle" transform="rotate(-90 12 ${pad.t+ih/2})">AI task exposure (0–10)</text>`;
+
+  pts.forEach((d,i)=>{
+    const r=3.2+Math.min(4.8,Math.sqrt((d.emp_2025||0)/25000));
+    svg+=`<circle class="scatter-dot" data-index="${i}" cx="${x(+d.pay_weekly).toFixed(1)}" cy="${y(+d.ai_exposure).toFixed(1)}" r="${r.toFixed(1)}" fill="${GRPC[String(d.major)]||"#6f7d89"}"><title>${esc(d.name)} — ${(+d.pay_weekly).toLocaleString()}/wk · AI ${(+d.ai_exposure).toFixed(0)}/10</title></circle>`;
+  });
+  svg+="</svg>";
+  host.innerHTML=svg;
+
+  host.querySelectorAll(".scatter-dot").forEach(el=>{
+    const d=pts[Number(el.dataset.index)];
+    el.addEventListener("mousemove",e=>showTip(e,d));
+    el.addEventListener("mouseleave",()=>{tip.style.display="none";});
+    el.addEventListener("click",()=>window.open(jsaUrl(d),"_blank","noopener"));
+  });
+}
+
 const jsaUrl=d=>d.url||"https://www.jobsandskills.gov.au/data/occupation-and-industry-profiles?search="+encodeURIComponent(d.name);
 
 function filteredRows(){
@@ -582,7 +756,7 @@ function updateFilterStatus(rows){
 function render(){
   if(!DATA) return;
   const rows=filteredRows();
-  buildTicker(rows); buildMovers(rows); buildDist(rows); updateFilterStatus(rows);
+  buildTicker(rows); buildMovers(rows); buildDist(rows); buildGroupChart(rows); buildPayAiChart(rows); updateFilterStatus(rows);
   map.querySelectorAll(".grp,.empty-state").forEach(n=>n.remove());
   const W=map.clientWidth,H=map.clientHeight;
   if(!W||!H) return;
