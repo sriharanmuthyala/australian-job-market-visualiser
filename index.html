@@ -58,7 +58,7 @@ button,input,select{font:inherit}
   background:rgba(255,255,255,.02)
 }
 .source-link:hover{color:var(--fg);border-color:#526171;background:rgba(255,255,255,.04)}
-.blurb{max-width:none;width:100%;color:var(--dim);margin:17px 0 0;padding:0;font-size:14.5px;line-height:1.68;text-align:left}
+.blurb{max-width:none;width:100%;color:var(--dim);margin:17px 0 0;padding:0;font-size:14.5px;line-height:1.68;text-align:justify;text-justify:inter-word}
 .blurb b{color:var(--fg);font-weight:600}
 .data-key{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0 0}
 .data-chip{
@@ -267,13 +267,7 @@ footer a{color:var(--dim)}
   </div>
 </div>
 
-<p class="blurb">Explore how Australia’s workforce is distributed today and how occupations are projected
-to change through 2035. Each rectangle is an ANZSCO occupation, sized by employment. Use the controls to
-compare <b>official Jobs and Skills Australia / ABS measures</b> — employment outlook, skill level and median
-weekly earnings — with an <b>experimental AI task-exposure estimate</b>. The AI layer is not a forecast of job
-loss: it estimates how much the task mix of an occupation may be affected by current and near-term AI, while
-actual employment also depends on demand, regulation, human interaction, physical work and other factors.
-Click a tile for its JSA profile, or a group heading to zoom in.</p>
+<p class="blurb">Australia’s labour market is made up of hundreds of very different occupations, from large frontline workforces to highly specialised professional roles. This visual lets you explore that mix at a glance. Rectangle size represents the number of people employed in each occupation, while colour can be switched between projected growth, median weekly earnings, skill level, occupation group and an experimental AI task-exposure score. The employment, earnings and skill measures come from Jobs and Skills Australia and ABS sources; the AI layer is a separate exploratory estimate designed to show where work may change, not to predict which jobs will disappear. Use the filters to narrow the view, hover for detail, and open any occupation to see its Jobs and Skills Australia profile.</p>
 <div class="data-key" aria-label="Data provenance">
   <span class="data-chip">Official data · JSA / ABS</span>
   <span class="data-chip experimental">Experimental · AI task exposure</span>
