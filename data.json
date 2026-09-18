@@ -1,11 +1,15 @@
 {
  "meta": {
-  "source": "Jobs and Skills Australia, Employment Projections May 2025 \u2013 May 2035",
+  "source": "Jobs and Skills Australia, Employment Projections May 2025 – May 2035",
   "baseline": "May 2025",
   "classification": "ANZSCO 4-digit unit groups",
   "sheet": "Table_6 Occupation Unit Group",
   "generated": "2026-09-17",
-  "ai_exposure_note": "Scored with prompts/ai_exposure.txt; rationales require score_llm.py"
+  "ai_exposure_note": "Scored with prompts/ai_exposure.txt; rationales require score_llm.py",
+  "pay_source": "Jobs and Skills Australia Occupation Profiles (February 2025 snapshot), via public extracted dataset",
+  "pay_reference_period": "May 2023",
+  "pay_definition": "Median weekly earnings; older official profile snapshot used as an interim layer while the May 2025 JSA pay extract is refreshed.",
+  "pay_status": "interim"
  },
  "occupations": [
   {
@@ -19,10 +23,10 @@
    "emp_2030": 583907,
    "emp_2035": 609185,
    "growth_5y": 2.5,
-   "growth_10y": 7.0,
-   "pay_weekly": null,
+   "growth_10y": 7,
+   "pay_weekly": 1112,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "4231",
@@ -36,9 +40,9 @@
    "emp_2035": 437240,
    "growth_5y": 10.7,
    "growth_10y": 18.1,
-   "pay_weekly": null,
+   "pay_weekly": 1564,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2544",
@@ -52,9 +56,9 @@
    "emp_2035": 458643,
    "growth_5y": 13.7,
    "growth_10y": 26.1,
-   "pay_weekly": null,
+   "pay_weekly": 2156,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "5311",
@@ -67,10 +71,10 @@
    "emp_2030": 331642,
    "emp_2035": 354461,
    "growth_5y": 11.3,
-   "growth_10y": 19.0,
-   "pay_weekly": null,
+   "growth_10y": 19,
+   "pay_weekly": 1305,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "1421",
@@ -82,11 +86,11 @@
    "emp_2025": 250748,
    "emp_2030": 255807,
    "emp_2035": 267728,
-   "growth_5y": 2.0,
+   "growth_5y": 2,
    "growth_10y": 6.8,
-   "pay_weekly": null,
+   "pay_weekly": 1472,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "2211",
@@ -100,9 +104,9 @@
    "emp_2035": 245260,
    "growth_5y": 8.4,
    "growth_10y": 16.6,
-   "pay_weekly": null,
+   "pay_weekly": 1841,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "3411",
@@ -115,10 +119,10 @@
    "emp_2030": 207935,
    "emp_2035": 218278,
    "growth_5y": 6.7,
-   "growth_10y": 12.0,
-   "pay_weekly": null,
+   "growth_10y": 12,
+   "pay_weekly": 2204,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "5421",
@@ -132,9 +136,9 @@
    "emp_2035": 205850,
    "growth_5y": 2.1,
    "growth_10y": 8.3,
-   "pay_weekly": null,
+   "pay_weekly": 1175,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "7331",
@@ -147,10 +151,10 @@
    "emp_2030": 190350,
    "emp_2035": 196852,
    "growth_5y": 0.6,
-   "growth_10y": 4.0,
-   "pay_weekly": null,
+   "growth_10y": 4,
+   "pay_weekly": 1780,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "2613",
@@ -164,9 +168,9 @@
    "emp_2035": 235692,
    "growth_5y": 15.7,
    "growth_10y": 26.7,
-   "pay_weekly": null,
+   "pay_weekly": 2496,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "7411",
@@ -180,9 +184,9 @@
    "emp_2035": 199001,
    "growth_5y": 7.2,
    "growth_10y": 13.3,
-   "pay_weekly": null,
+   "pay_weekly": 1237,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "4211",
@@ -194,11 +198,11 @@
    "emp_2025": 172417,
    "emp_2030": 174121,
    "emp_2035": 180230,
-   "growth_5y": 1.0,
+   "growth_5y": 1,
    "growth_10y": 4.5,
-   "pay_weekly": null,
+   "pay_weekly": 1146,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2412",
@@ -212,9 +216,9 @@
    "emp_2035": 188360,
    "growth_5y": 5.5,
    "growth_10y": 11.7,
-   "pay_weekly": null,
+   "pay_weekly": 2000,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "1311",
@@ -228,9 +232,9 @@
    "emp_2035": 194351,
    "growth_5y": 9.4,
    "growth_10y": 17.5,
-   "pay_weekly": null,
+   "pay_weekly": 2331,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "5111",
@@ -244,9 +248,9 @@
    "emp_2035": 193055,
    "growth_5y": 9.5,
    "growth_10y": 17.3,
-   "pay_weekly": null,
+   "pay_weekly": 2033,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "2414",
@@ -260,9 +264,9 @@
    "emp_2035": 171413,
    "growth_5y": 5.4,
    "growth_10y": 11.7,
-   "pay_weekly": null,
+   "pay_weekly": 2166,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "8112",
@@ -276,9 +280,9 @@
    "emp_2035": 159875,
    "growth_5y": 0.4,
    "growth_10y": 4.5,
-   "pay_weekly": null,
+   "pay_weekly": 1192,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "8513",
@@ -292,9 +296,9 @@
    "emp_2035": 164967,
    "growth_5y": 3.3,
    "growth_10y": 8.8,
-   "pay_weekly": null,
+   "pay_weekly": 1250,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3312",
@@ -308,9 +312,9 @@
    "emp_2035": 165554,
    "growth_5y": 6.4,
    "growth_10y": 10.9,
-   "pay_weekly": null,
+   "pay_weekly": 1787,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "5511",
@@ -324,9 +328,9 @@
    "emp_2035": 146884,
    "growth_5y": 1.3,
    "growth_10y": 5.9,
-   "pay_weekly": null,
+   "pay_weekly": 1392,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "5121",
@@ -340,9 +344,9 @@
    "emp_2035": 148117,
    "growth_5y": 3.3,
    "growth_10y": 8.4,
-   "pay_weekly": null,
+   "pay_weekly": 1522,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "4221",
@@ -354,11 +358,11 @@
    "emp_2025": 134653,
    "emp_2030": 141413,
    "emp_2035": 147658,
-   "growth_5y": 5.0,
+   "growth_5y": 5,
    "growth_10y": 9.7,
-   "pay_weekly": null,
+   "pay_weekly": 1098,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "1331",
@@ -372,9 +376,9 @@
    "emp_2035": 156627,
    "growth_5y": 14.9,
    "growth_10y": 22.2,
-   "pay_weekly": null,
+   "pay_weekly": 3691,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "4315",
@@ -388,9 +392,9 @@
    "emp_2035": 141110,
    "growth_5y": 5.2,
    "growth_10y": 11.6,
-   "pay_weekly": null,
+   "pay_weekly": 1249,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "6311",
@@ -404,9 +408,9 @@
    "emp_2035": 130462,
    "growth_5y": 0.6,
    "growth_10y": 4.2,
-   "pay_weekly": null,
+   "pay_weekly": 1108,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "3513",
@@ -420,9 +424,9 @@
    "emp_2035": 140467,
    "growth_5y": 5.8,
    "growth_10y": 12.5,
-   "pay_weekly": null,
+   "pay_weekly": 1330,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "3232",
@@ -434,11 +438,11 @@
    "emp_2025": 122958,
    "emp_2030": 126601,
    "emp_2035": 131831,
-   "growth_5y": 3.0,
+   "growth_5y": 3,
    "growth_10y": 7.2,
-   "pay_weekly": null,
+   "pay_weekly": 2243,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "4311",
@@ -452,9 +456,9 @@
    "emp_2035": 134127,
    "growth_5y": 5.2,
    "growth_10y": 11.4,
-   "pay_weekly": null,
+   "pay_weekly": 1240,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "5911",
@@ -468,9 +472,9 @@
    "emp_2035": 130794,
    "growth_5y": 5.4,
    "growth_10y": 11.3,
-   "pay_weekly": null,
+   "pay_weekly": 1442,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "4233",
@@ -484,9 +488,9 @@
    "emp_2035": 143439,
    "growth_5y": 13.8,
    "growth_10y": 24.7,
-   "pay_weekly": null,
+   "pay_weekly": 1279,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "6121",
@@ -500,9 +504,9 @@
    "emp_2035": 130566,
    "growth_5y": 7.6,
    "growth_10y": 14.2,
-   "pay_weekly": null,
+   "pay_weekly": 1320,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "3212",
@@ -516,9 +520,9 @@
    "emp_2035": 119548,
    "growth_5y": 2.7,
    "growth_10y": 7.5,
-   "pay_weekly": null,
+   "pay_weekly": 1405,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2247",
@@ -532,9 +536,9 @@
    "emp_2035": 137110,
    "growth_5y": 16.2,
    "growth_10y": 27.3,
-   "pay_weekly": null,
+   "pay_weekly": 2308,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "3341",
@@ -548,9 +552,9 @@
    "emp_2035": 114160,
    "growth_5y": 5.2,
    "growth_10y": 10.2,
-   "pay_weekly": null,
+   "pay_weekly": 2000,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2251",
@@ -564,9 +568,9 @@
    "emp_2035": 125728,
    "growth_5y": 12.6,
    "growth_10y": 22.1,
-   "pay_weekly": null,
+   "pay_weekly": 1803,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "2713",
@@ -580,9 +584,9 @@
    "emp_2035": 121536,
    "growth_5y": 11.7,
    "growth_10y": 21.2,
-   "pay_weekly": null,
+   "pay_weekly": 1828,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "4117",
@@ -594,11 +598,11 @@
    "emp_2025": 96486,
    "emp_2030": 102315,
    "emp_2035": 107955,
-   "growth_5y": 6.0,
+   "growth_5y": 6,
    "growth_10y": 11.9,
-   "pay_weekly": null,
+   "pay_weekly": 1688,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "1323",
@@ -612,9 +616,9 @@
    "emp_2035": 113121,
    "growth_5y": 12.4,
    "growth_10y": 21.8,
-   "pay_weekly": null,
+   "pay_weekly": 2946,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "1499",
@@ -628,9 +632,9 @@
    "emp_2035": 105188,
    "growth_5y": 6.7,
    "growth_10y": 13.4,
-   "pay_weekly": null,
+   "pay_weekly": 2213,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "7321",
@@ -644,9 +648,9 @@
    "emp_2035": 111107,
    "growth_5y": 13.1,
    "growth_10y": 21.3,
-   "pay_weekly": null,
+   "pay_weekly": 1269,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "1351",
@@ -658,11 +662,11 @@
    "emp_2025": 89883,
    "emp_2030": 103370,
    "emp_2035": 112762,
-   "growth_5y": 15.0,
+   "growth_5y": 15,
    "growth_10y": 25.5,
-   "pay_weekly": null,
+   "pay_weekly": 3534,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "2231",
@@ -676,9 +680,9 @@
    "emp_2035": 102919,
    "growth_5y": 7.4,
    "growth_10y": 14.8,
-   "pay_weekly": null,
+   "pay_weekly": 1870,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "2531",
@@ -690,11 +694,11 @@
    "emp_2025": 89006,
    "emp_2030": 105038,
    "emp_2035": 118345,
-   "growth_5y": 18.0,
-   "growth_10y": 33.0,
-   "pay_weekly": null,
+   "growth_5y": 18,
+   "growth_10y": 33,
+   "pay_weekly": 2616,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "5512",
@@ -708,9 +712,9 @@
    "emp_2035": 93462,
    "growth_5y": 1.3,
    "growth_10y": 5.9,
-   "pay_weekly": null,
+   "pay_weekly": 1501,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "3622",
@@ -726,7 +730,7 @@
    "growth_10y": 8.8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3121",
@@ -740,9 +744,9 @@
    "emp_2035": 96143,
    "growth_5y": 8.3,
    "growth_10y": 14.2,
-   "pay_weekly": null,
+   "pay_weekly": 2115,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "5412",
@@ -756,9 +760,9 @@
    "emp_2035": 88602,
    "growth_5y": 3.5,
    "growth_10y": 8.3,
-   "pay_weekly": null,
+   "pay_weekly": 1293,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "2411",
@@ -772,9 +776,9 @@
    "emp_2035": 89430,
    "growth_5y": 5.7,
    "growth_10y": 12.1,
-   "pay_weekly": null,
+   "pay_weekly": 1660,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "1213",
@@ -790,7 +794,7 @@
    "growth_10y": 1.2,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "3223",
@@ -804,9 +808,9 @@
    "emp_2035": 82956,
    "growth_5y": 2.9,
    "growth_10y": 7.5,
-   "pay_weekly": null,
+   "pay_weekly": 1755,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "6113",
@@ -818,11 +822,11 @@
    "emp_2025": 76535,
    "emp_2030": 76536,
    "emp_2035": 79785,
-   "growth_5y": 0.0,
+   "growth_5y": 0,
    "growth_10y": 4.2,
-   "pay_weekly": null,
+   "pay_weekly": 1621,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "1322",
@@ -836,9 +840,9 @@
    "emp_2035": 92974,
    "growth_5y": 12.4,
    "growth_10y": 21.9,
-   "pay_weekly": null,
+   "pay_weekly": 3120,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "2332",
@@ -851,10 +855,10 @@
    "emp_2030": 85120,
    "emp_2035": 92295,
    "growth_5y": 11.6,
-   "growth_10y": 21.0,
-   "pay_weekly": null,
+   "growth_10y": 21,
+   "pay_weekly": 2264,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "3131",
@@ -868,9 +872,9 @@
    "emp_2035": 87813,
    "growth_5y": 9.4,
    "growth_10y": 17.4,
-   "pay_weekly": null,
+   "pay_weekly": 1442,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "8211",
@@ -882,11 +886,11 @@
    "emp_2025": 73043,
    "emp_2030": 75226,
    "emp_2035": 77695,
-   "growth_5y": 3.0,
+   "growth_5y": 3,
    "growth_10y": 6.4,
-   "pay_weekly": null,
+   "pay_weekly": 1634,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "8912",
@@ -902,7 +906,7 @@
    "growth_10y": 0.1,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "1112",
@@ -918,7 +922,7 @@
    "growth_10y": 13.7,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "7213",
@@ -932,9 +936,9 @@
    "emp_2035": 71472,
    "growth_5y": -0.1,
    "growth_10y": 3.5,
-   "pay_weekly": null,
+   "pay_weekly": 1447,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2621",
@@ -946,11 +950,11 @@
    "emp_2025": 68857,
    "emp_2030": 78506,
    "emp_2035": 85411,
-   "growth_5y": 14.0,
-   "growth_10y": 24.0,
-   "pay_weekly": null,
+   "growth_5y": 14,
+   "growth_10y": 24,
+   "pay_weekly": 2284,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "1399",
@@ -964,9 +968,9 @@
    "emp_2035": 82872,
    "growth_5y": 11.5,
    "growth_10y": 20.4,
-   "pay_weekly": null,
+   "pay_weekly": 2746,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "8999",
@@ -980,9 +984,9 @@
    "emp_2035": 71498,
    "growth_5y": 0.8,
    "growth_10y": 4.2,
-   "pay_weekly": null,
+   "pay_weekly": 1480,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "4413",
@@ -996,9 +1000,9 @@
    "emp_2035": 74944,
    "growth_5y": 6.2,
    "growth_10y": 11.1,
-   "pay_weekly": null,
+   "pay_weekly": 2422,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "2223",
@@ -1012,9 +1016,9 @@
    "emp_2035": 74187,
    "growth_5y": 6.1,
    "growth_10y": 12.7,
-   "pay_weekly": null,
+   "pay_weekly": 2320,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "4422",
@@ -1028,9 +1032,9 @@
    "emp_2035": 72213,
    "growth_5y": 5.5,
    "growth_10y": 10.6,
-   "pay_weekly": null,
+   "pay_weekly": 1638,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "3911",
@@ -1044,9 +1048,9 @@
    "emp_2035": 68472,
    "growth_5y": 0.7,
    "growth_10y": 5.6,
-   "pay_weekly": null,
+   "pay_weekly": 1121,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "1411",
@@ -1060,9 +1064,9 @@
    "emp_2035": 69138,
    "growth_5y": 1.7,
    "growth_10y": 7.2,
-   "pay_weekly": null,
+   "pay_weekly": 1441,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "7122",
@@ -1076,9 +1080,9 @@
    "emp_2035": 67860,
    "growth_5y": 3.8,
    "growth_10y": 5.8,
-   "pay_weekly": null,
+   "pay_weekly": 2824,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2421",
@@ -1091,10 +1095,10 @@
    "emp_2030": 69461,
    "emp_2035": 76619,
    "growth_5y": 8.8,
-   "growth_10y": 20.0,
-   "pay_weekly": null,
+   "growth_10y": 20,
+   "pay_weekly": 2732,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "1335",
@@ -1106,11 +1110,11 @@
    "emp_2025": 62231,
    "emp_2030": 67835,
    "emp_2035": 72682,
-   "growth_5y": 9.0,
+   "growth_5y": 9,
    "growth_10y": 16.8,
-   "pay_weekly": null,
+   "pay_weekly": 2588,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "1111",
@@ -1126,7 +1130,7 @@
    "growth_10y": 14.1,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "8321",
@@ -1138,11 +1142,11 @@
    "emp_2025": 59633,
    "emp_2030": 59049,
    "emp_2035": 61208,
-   "growth_5y": -1.0,
+   "growth_5y": -1,
    "growth_10y": 2.6,
-   "pay_weekly": null,
+   "pay_weekly": 1216,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "4523",
@@ -1156,9 +1160,9 @@
    "emp_2035": 65907,
    "growth_5y": 5.9,
    "growth_10y": 12.1,
-   "pay_weekly": null,
+   "pay_weekly": 1286,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "2249",
@@ -1170,11 +1174,11 @@
    "emp_2025": 57124,
    "emp_2030": 66261,
    "emp_2035": 72327,
-   "growth_5y": 16.0,
+   "growth_5y": 16,
    "growth_10y": 26.6,
-   "pay_weekly": null,
+   "pay_weekly": 2166,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "2324",
@@ -1187,10 +1191,10 @@
    "emp_2030": 61178,
    "emp_2035": 66245,
    "growth_5y": 9.9,
-   "growth_10y": 19.0,
-   "pay_weekly": null,
+   "growth_10y": 19,
+   "pay_weekly": 1500,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "1336",
@@ -1204,9 +1208,9 @@
    "emp_2035": 64091,
    "growth_5y": 8.1,
    "growth_10y": 15.5,
-   "pay_weekly": null,
+   "pay_weekly": 2675,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "7311",
@@ -1222,7 +1226,7 @@
    "growth_10y": 9.3,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "3322",
@@ -1236,9 +1240,9 @@
    "emp_2035": 58065,
    "growth_5y": 3.6,
    "growth_10y": 7.9,
-   "pay_weekly": null,
+   "pay_weekly": 1400,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "5513",
@@ -1250,11 +1254,11 @@
    "emp_2025": 52311,
    "emp_2030": 52844,
    "emp_2035": 55213,
-   "growth_5y": 1.0,
+   "growth_5y": 1,
    "growth_10y": 5.5,
-   "pay_weekly": null,
+   "pay_weekly": 1548,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "6215",
@@ -1268,9 +1272,9 @@
    "emp_2035": 55619,
    "growth_5y": 2.5,
    "growth_10y": 6.8,
-   "pay_weekly": null,
+   "pay_weekly": 1276,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "2611",
@@ -1284,9 +1288,9 @@
    "emp_2035": 64730,
    "growth_5y": 15.1,
    "growth_10y": 25.9,
-   "pay_weekly": null,
+   "pay_weekly": 2742,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "2723",
@@ -1300,9 +1304,9 @@
    "emp_2035": 66866,
    "growth_5y": 16.8,
    "growth_10y": 30.6,
-   "pay_weekly": null,
+   "pay_weekly": 2054,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "2221",
@@ -1314,11 +1318,11 @@
    "emp_2025": 50642,
    "emp_2030": 53684,
    "emp_2035": 57048,
-   "growth_5y": 6.0,
+   "growth_5y": 6,
    "growth_10y": 12.6,
-   "pay_weekly": null,
+   "pay_weekly": 1635,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "8511",
@@ -1332,9 +1336,9 @@
    "emp_2035": 53744,
    "growth_5y": 2.2,
    "growth_10y": 7.1,
-   "pay_weekly": null,
+   "pay_weekly": 1179,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2725",
@@ -1348,9 +1352,9 @@
    "emp_2035": 62460,
    "growth_5y": 14.6,
    "growth_10y": 25.3,
-   "pay_weekly": null,
+   "pay_weekly": 1850,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "5211",
@@ -1364,9 +1368,9 @@
    "emp_2035": 46929,
    "growth_5y": -7.7,
    "growth_10y": -5.8,
-   "pay_weekly": null,
+   "pay_weekly": 1632,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "7212",
@@ -1380,9 +1384,9 @@
    "emp_2035": 50734,
    "growth_5y": 1.2,
    "growth_10y": 4.3,
-   "pay_weekly": null,
+   "pay_weekly": 1944,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "5995",
@@ -1395,10 +1399,10 @@
    "emp_2030": 48969,
    "emp_2035": 50811,
    "growth_5y": 3.1,
-   "growth_10y": 7.0,
-   "pay_weekly": null,
+   "growth_10y": 7,
+   "pay_weekly": 1764,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "2525",
@@ -1412,9 +1416,9 @@
    "emp_2035": 63470,
    "growth_5y": 19.7,
    "growth_10y": 35.1,
-   "pay_weekly": null,
+   "pay_weekly": 1710,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "5912",
@@ -1426,11 +1430,11 @@
    "emp_2025": 46458,
    "emp_2030": 48766,
    "emp_2035": 51445,
-   "growth_5y": 5.0,
+   "growth_5y": 5,
    "growth_10y": 10.7,
-   "pay_weekly": null,
+   "pay_weekly": 1572,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "5321",
@@ -1442,11 +1446,11 @@
    "emp_2025": 46343,
    "emp_2030": 43577,
    "emp_2035": 44736,
-   "growth_5y": -6.0,
+   "growth_5y": -6,
    "growth_10y": -3.5,
-   "pay_weekly": null,
+   "pay_weekly": 1279,
    "shortage": null,
-   "ai_exposure": 10.0
+   "ai_exposure": 10
   },
   {
    "code": "2492",
@@ -1460,9 +1464,9 @@
    "emp_2035": 51687,
    "growth_5y": 6.2,
    "growth_10y": 13.8,
-   "pay_weekly": null,
+   "pay_weekly": 1876,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "2244",
@@ -1474,11 +1478,11 @@
    "emp_2025": 45428,
    "emp_2030": 52688,
    "emp_2035": 56861,
-   "growth_5y": 16.0,
+   "growth_5y": 16,
    "growth_10y": 25.2,
-   "pay_weekly": null,
+   "pay_weekly": 1936,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "2631",
@@ -1492,9 +1496,9 @@
    "emp_2035": 56371,
    "growth_5y": 14.8,
    "growth_10y": 25.2,
-   "pay_weekly": null,
+   "pay_weekly": 2308,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "1342",
@@ -1508,9 +1512,9 @@
    "emp_2035": 56240,
    "growth_5y": 15.2,
    "growth_10y": 27.1,
-   "pay_weekly": null,
+   "pay_weekly": 2016,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "8993",
@@ -1524,9 +1528,9 @@
    "emp_2035": 47244,
    "growth_5y": 3.6,
    "growth_10y": 7.8,
-   "pay_weekly": null,
+   "pay_weekly": 1307,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "5612",
@@ -1540,9 +1544,9 @@
    "emp_2035": 42213,
    "growth_5y": -4.2,
    "growth_10y": -0.8,
-   "pay_weekly": null,
+   "pay_weekly": 1370,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "6214",
@@ -1556,9 +1560,9 @@
    "emp_2035": 45292,
    "growth_5y": 2.4,
    "growth_10y": 6.5,
-   "pay_weekly": null,
+   "pay_weekly": 932,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "5521",
@@ -1572,9 +1576,9 @@
    "emp_2035": 45850,
    "growth_5y": 2.3,
    "growth_10y": 8.4,
-   "pay_weekly": null,
+   "pay_weekly": 1384,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "2515",
@@ -1587,10 +1591,10 @@
    "emp_2030": 46557,
    "emp_2035": 50365,
    "growth_5y": 10.9,
-   "growth_10y": 20.0,
-   "pay_weekly": null,
+   "growth_10y": 20,
+   "pay_weekly": 2071,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "3112",
@@ -1602,11 +1606,11 @@
    "emp_2025": 41937,
    "emp_2030": 45281,
    "emp_2035": 49244,
-   "growth_5y": 8.0,
+   "growth_5y": 8,
    "growth_10y": 17.4,
-   "pay_weekly": null,
+   "pay_weekly": 1322,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "5523",
@@ -1620,9 +1624,9 @@
    "emp_2035": 43762,
    "growth_5y": 2.3,
    "growth_10y": 7.6,
-   "pay_weekly": null,
+   "pay_weekly": 1489,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "2726",
@@ -1636,9 +1640,9 @@
    "emp_2035": 49915,
    "growth_5y": 13.7,
    "growth_10y": 23.4,
-   "pay_weekly": null,
+   "pay_weekly": 1926,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "7312",
@@ -1650,11 +1654,11 @@
    "emp_2025": 40249,
    "emp_2030": 41855,
    "emp_2035": 43968,
-   "growth_5y": 4.0,
+   "growth_5y": 4,
    "growth_10y": 9.2,
-   "pay_weekly": null,
+   "pay_weekly": 1676,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2335",
@@ -1668,9 +1672,9 @@
    "emp_2035": 49349,
    "growth_5y": 12.7,
    "growth_10y": 23.1,
-   "pay_weekly": null,
+   "pay_weekly": 2151,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "2513",
@@ -1684,9 +1688,9 @@
    "emp_2035": 47945,
    "growth_5y": 11.3,
    "growth_10y": 19.8,
-   "pay_weekly": null,
+   "pay_weekly": 2135,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "1492",
@@ -1700,9 +1704,9 @@
    "emp_2035": 44825,
    "growth_5y": 6.8,
    "growth_10y": 13.4,
-   "pay_weekly": null,
+   "pay_weekly": 1888,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "3514",
@@ -1714,11 +1718,11 @@
    "emp_2025": 39447,
    "emp_2030": 41804,
    "emp_2035": 44394,
-   "growth_5y": 6.0,
+   "growth_5y": 6,
    "growth_10y": 12.5,
-   "pay_weekly": null,
+   "pay_weekly": 1198,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3129",
@@ -1732,9 +1736,9 @@
    "emp_2035": 43950,
    "growth_5y": 6.4,
    "growth_10y": 11.7,
-   "pay_weekly": null,
+   "pay_weekly": 3024,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "1324",
@@ -1748,9 +1752,9 @@
    "emp_2035": 47304,
    "growth_5y": 12.1,
    "growth_10y": 20.3,
-   "pay_weekly": null,
+   "pay_weekly": 2584,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "4511",
@@ -1764,9 +1768,9 @@
    "emp_2035": 43410,
    "growth_5y": 4.2,
    "growth_10y": 10.6,
-   "pay_weekly": null,
+   "pay_weekly": 1200,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "4312",
@@ -1780,9 +1784,9 @@
    "emp_2035": 41647,
    "growth_5y": 5.2,
    "growth_10y": 11.3,
-   "pay_weekly": null,
+   "pay_weekly": 1148,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "8212",
@@ -1796,9 +1800,9 @@
    "emp_2035": 38517,
    "growth_5y": 2.3,
    "growth_10y": 5.7,
-   "pay_weekly": null,
+   "pay_weekly": 1855,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "5522",
@@ -1812,9 +1816,9 @@
    "emp_2035": 39498,
    "growth_5y": 2.6,
    "growth_10y": 8.4,
-   "pay_weekly": null,
+   "pay_weekly": 1520,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "6213",
@@ -1828,9 +1832,9 @@
    "emp_2035": 38619,
    "growth_5y": 2.9,
    "growth_10y": 7.3,
-   "pay_weekly": null,
+   "pay_weekly": 1300,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "4521",
@@ -1844,9 +1848,9 @@
    "emp_2035": 39896,
    "growth_5y": 6.4,
    "growth_10y": 13.1,
-   "pay_weekly": null,
+   "pay_weekly": 1288,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2422",
@@ -1858,11 +1862,11 @@
    "emp_2025": 35244,
    "emp_2030": 38399,
    "emp_2035": 42009,
-   "growth_5y": 9.0,
+   "growth_5y": 9,
    "growth_10y": 19.2,
-   "pay_weekly": null,
+   "pay_weekly": 1886,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "1332",
@@ -1876,9 +1880,9 @@
    "emp_2035": 40255,
    "growth_5y": 8.3,
    "growth_10y": 15.8,
-   "pay_weekly": null,
+   "pay_weekly": 2961,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "3511",
@@ -1890,11 +1894,11 @@
    "emp_2025": 34272,
    "emp_2030": 35285,
    "emp_2035": 37030,
-   "growth_5y": 3.0,
-   "growth_10y": 8.0,
-   "pay_weekly": null,
+   "growth_5y": 3,
+   "growth_10y": 8,
+   "pay_weekly": 1353,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2721",
@@ -1906,11 +1910,11 @@
    "emp_2025": 34045,
    "emp_2030": 38465,
    "emp_2035": 42000,
-   "growth_5y": 13.0,
+   "growth_5y": 13,
    "growth_10y": 23.4,
-   "pay_weekly": null,
+   "pay_weekly": 1477,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "1212",
@@ -1926,7 +1930,7 @@
    "growth_10y": 4.6,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "8114",
@@ -1940,9 +1944,9 @@
    "emp_2035": 34323,
    "growth_5y": -1.3,
    "growth_10y": 4.2,
-   "pay_weekly": null,
+   "pay_weekly": 1252,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3941",
@@ -1956,9 +1960,9 @@
    "emp_2035": 35496,
    "growth_5y": 2.6,
    "growth_10y": 7.8,
-   "pay_weekly": null,
+   "pay_weekly": 1216,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "8113",
@@ -1970,11 +1974,11 @@
    "emp_2025": 32494,
    "emp_2030": 32828,
    "emp_2035": 34165,
-   "growth_5y": 1.0,
+   "growth_5y": 1,
    "growth_10y": 5.1,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "8414",
@@ -1990,7 +1994,7 @@
    "growth_10y": 5.3,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2346",
@@ -2004,9 +2008,9 @@
    "emp_2035": 40370,
    "growth_5y": 12.7,
    "growth_10y": 24.8,
-   "pay_weekly": null,
+   "pay_weekly": 2004,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "2333",
@@ -2018,11 +2022,11 @@
    "emp_2025": 32250,
    "emp_2030": 36131,
    "emp_2035": 39279,
-   "growth_5y": 12.0,
+   "growth_5y": 12,
    "growth_10y": 21.8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "5411",
@@ -2036,9 +2040,9 @@
    "emp_2035": 34851,
    "growth_5y": 3.2,
    "growth_10y": 8.3,
-   "pay_weekly": null,
+   "pay_weekly": 1352,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "2233",
@@ -2052,9 +2056,9 @@
    "emp_2035": 36520,
    "growth_5y": 7.5,
    "growth_10y": 14.9,
-   "pay_weekly": null,
+   "pay_weekly": 2146,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "2212",
@@ -2066,11 +2070,11 @@
    "emp_2025": 31540,
    "emp_2030": 34072,
    "emp_2035": 36554,
-   "growth_5y": 8.0,
+   "growth_5y": 8,
    "growth_10y": 15.9,
-   "pay_weekly": null,
+   "pay_weekly": 2046,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "2343",
@@ -2084,9 +2088,9 @@
    "emp_2035": 36769,
    "growth_5y": 8.9,
    "growth_10y": 16.6,
-   "pay_weekly": null,
+   "pay_weekly": 1841,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "3332",
@@ -2102,7 +2106,7 @@
    "growth_10y": 5.7,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2524",
@@ -2116,9 +2120,9 @@
    "emp_2035": 41639,
    "growth_5y": 18.8,
    "growth_10y": 33.1,
-   "pay_weekly": null,
+   "pay_weekly": 1526,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "5122",
@@ -2132,9 +2136,9 @@
    "emp_2035": 36488,
    "growth_5y": 8.1,
    "growth_10y": 17.6,
-   "pay_weekly": null,
+   "pay_weekly": 1626,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "2321",
@@ -2148,9 +2152,9 @@
    "emp_2035": 36872,
    "growth_5y": 10.3,
    "growth_10y": 19.2,
-   "pay_weekly": null,
+   "pay_weekly": 1688,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "2253",
@@ -2164,9 +2168,9 @@
    "emp_2035": 37319,
    "growth_5y": 12.3,
    "growth_10y": 21.2,
-   "pay_weekly": null,
+   "pay_weekly": 1949,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "1493",
@@ -2180,9 +2184,9 @@
    "emp_2035": 34046,
    "growth_5y": 5.6,
    "growth_10y": 12.2,
-   "pay_weekly": null,
+   "pay_weekly": 1538,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "3423",
@@ -2196,9 +2200,9 @@
    "emp_2035": 32158,
    "growth_5y": 1.8,
    "growth_10y": 6.2,
-   "pay_weekly": null,
+   "pay_weekly": 1525,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "5212",
@@ -2212,9 +2216,9 @@
    "emp_2035": 28458,
    "growth_5y": -7.5,
    "growth_10y": -5.7,
-   "pay_weekly": null,
+   "pay_weekly": 1394,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "2415",
@@ -2228,9 +2232,9 @@
    "emp_2035": 33360,
    "growth_5y": 5.9,
    "growth_10y": 12.6,
-   "pay_weekly": null,
+   "pay_weekly": 2153,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "3421",
@@ -2244,9 +2248,9 @@
    "emp_2035": 31186,
    "growth_5y": 2.3,
    "growth_10y": 6.7,
-   "pay_weekly": null,
+   "pay_weekly": 2019,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "1343",
@@ -2259,10 +2263,10 @@
    "emp_2030": 31388,
    "emp_2035": 33307,
    "growth_5y": 8.3,
-   "growth_10y": 15.0,
+   "growth_10y": 15,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "8415",
@@ -2278,7 +2282,7 @@
    "growth_10y": 1.8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "4111",
@@ -2292,9 +2296,9 @@
    "emp_2035": 34529,
    "growth_5y": 11.1,
    "growth_10y": 22.6,
-   "pay_weekly": null,
+   "pay_weekly": 2556,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "8311",
@@ -2308,9 +2312,9 @@
    "emp_2035": 28910,
    "growth_5y": -0.8,
    "growth_10y": 2.8,
-   "pay_weekly": null,
+   "pay_weekly": 1379,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2254",
@@ -2322,11 +2326,11 @@
    "emp_2025": 27905,
    "emp_2030": 31799,
    "emp_2035": 34777,
-   "growth_5y": 14.0,
+   "growth_5y": 14,
    "growth_10y": 24.6,
-   "pay_weekly": null,
+   "pay_weekly": 2612,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "1214",
@@ -2342,7 +2346,7 @@
    "growth_10y": 1.4,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "8322",
@@ -2356,9 +2360,9 @@
    "emp_2035": 29457,
    "growth_5y": 2.2,
    "growth_10y": 7.4,
-   "pay_weekly": null,
+   "pay_weekly": 1114,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "8214",
@@ -2370,11 +2374,11 @@
    "emp_2025": 27349,
    "emp_2030": 28175,
    "emp_2035": 29122,
-   "growth_5y": 3.0,
+   "growth_5y": 3,
    "growth_10y": 6.5,
-   "pay_weekly": null,
+   "pay_weekly": 1710,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3311",
@@ -2388,9 +2392,9 @@
    "emp_2035": 29194,
    "growth_5y": 5.2,
    "growth_10y": 9.8,
-   "pay_weekly": null,
+   "pay_weekly": 1597,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "8217",
@@ -2404,9 +2408,9 @@
    "emp_2035": 27586,
    "growth_5y": 1.3,
    "growth_10y": 4.6,
-   "pay_weekly": null,
+   "pay_weekly": 3120,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "4232",
@@ -2420,9 +2424,9 @@
    "emp_2035": 33136,
    "growth_5y": 14.5,
    "growth_10y": 26.8,
-   "pay_weekly": null,
+   "pay_weekly": 1139,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "3611",
@@ -2435,10 +2439,10 @@
    "emp_2030": 27347,
    "emp_2035": 28881,
    "growth_5y": 5.1,
-   "growth_10y": 11.0,
-   "pay_weekly": null,
+   "growth_10y": 11,
+   "pay_weekly": 1280,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "7129",
@@ -2450,11 +2454,11 @@
    "emp_2025": 25455,
    "emp_2030": 26224,
    "emp_2035": 27202,
-   "growth_5y": 3.0,
+   "growth_5y": 3,
    "growth_10y": 6.9,
-   "pay_weekly": null,
+   "pay_weekly": 1862,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "2491",
@@ -2468,9 +2472,9 @@
    "emp_2035": 29082,
    "growth_5y": 6.8,
    "growth_10y": 14.4,
-   "pay_weekly": null,
+   "pay_weekly": 2478,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "3999",
@@ -2484,9 +2488,9 @@
    "emp_2035": 28316,
    "growth_5y": 6.7,
    "growth_10y": 13.9,
-   "pay_weekly": null,
+   "pay_weekly": 1671,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "2523",
@@ -2498,11 +2502,11 @@
    "emp_2025": 24458,
    "emp_2030": 29348,
    "emp_2035": 33209,
-   "growth_5y": 20.0,
+   "growth_5y": 20,
    "growth_10y": 35.8,
-   "pay_weekly": null,
+   "pay_weekly": 3877,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "8412",
@@ -2518,7 +2522,7 @@
    "growth_10y": 5.5,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "5994",
@@ -2532,9 +2536,9 @@
    "emp_2035": 25864,
    "growth_5y": 4.3,
    "growth_10y": 10.1,
-   "pay_weekly": null,
+   "pay_weekly": 1472,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "2124",
@@ -2548,9 +2552,9 @@
    "emp_2035": 27714,
    "growth_5y": 9.5,
    "growth_10y": 18.7,
-   "pay_weekly": null,
+   "pay_weekly": 1842,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "7123",
@@ -2564,9 +2568,9 @@
    "emp_2035": 25706,
    "growth_5y": 6.3,
    "growth_10y": 11.6,
-   "pay_weekly": null,
+   "pay_weekly": 1400,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "2512",
@@ -2580,9 +2584,9 @@
    "emp_2035": 30510,
    "growth_5y": 18.1,
    "growth_10y": 33.1,
-   "pay_weekly": null,
+   "pay_weekly": 2297,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "3114",
@@ -2596,9 +2600,9 @@
    "emp_2035": 24363,
    "growth_5y": 3.3,
    "growth_10y": 8.6,
-   "pay_weekly": null,
+   "pay_weekly": 1638,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "4114",
@@ -2612,9 +2616,9 @@
    "emp_2035": 26808,
    "growth_5y": 10.6,
    "growth_10y": 21.3,
-   "pay_weekly": null,
+   "pay_weekly": 1618,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2527",
@@ -2628,9 +2632,9 @@
    "emp_2035": 29335,
    "growth_5y": 18.5,
    "growth_10y": 32.7,
-   "pay_weekly": null,
+   "pay_weekly": 1971,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "4516",
@@ -2644,9 +2648,9 @@
    "emp_2035": 23970,
    "growth_5y": 3.4,
    "growth_10y": 9.3,
-   "pay_weekly": null,
+   "pay_weekly": 1250,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "2543",
@@ -2660,9 +2664,9 @@
    "emp_2035": 27571,
    "growth_5y": 13.6,
    "growth_10y": 26.1,
-   "pay_weekly": null,
+   "pay_weekly": 2608,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "5999",
@@ -2676,9 +2680,9 @@
    "emp_2035": 24176,
    "growth_5y": 4.1,
    "growth_10y": 10.6,
-   "pay_weekly": null,
+   "pay_weekly": 1468,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "2539",
@@ -2690,11 +2694,11 @@
    "emp_2025": 21691,
    "emp_2030": 25603,
    "emp_2035": 28854,
-   "growth_5y": 18.0,
-   "growth_10y": 33.0,
-   "pay_weekly": null,
+   "growth_5y": 18,
+   "growth_10y": 33,
+   "pay_weekly": 3774,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "1334",
@@ -2710,7 +2714,7 @@
    "growth_10y": 18.8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "1321",
@@ -2724,9 +2728,9 @@
    "emp_2035": 26412,
    "growth_5y": 12.6,
    "growth_10y": 21.9,
-   "pay_weekly": null,
+   "pay_weekly": 2958,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "2541",
@@ -2740,9 +2744,9 @@
    "emp_2035": 26963,
    "growth_5y": 13.9,
    "growth_10y": 26.7,
-   "pay_weekly": null,
+   "pay_weekly": 2387,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2222",
@@ -2756,9 +2760,9 @@
    "emp_2035": 23888,
    "growth_5y": 5.4,
    "growth_10y": 12.5,
-   "pay_weekly": null,
+   "pay_weekly": 2407,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "6394",
@@ -2772,9 +2776,9 @@
    "emp_2035": 22342,
    "growth_5y": 0.2,
    "growth_10y": 5.4,
-   "pay_weekly": null,
+   "pay_weekly": 1222,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "3334",
@@ -2786,11 +2790,11 @@
    "emp_2025": 21093,
    "emp_2030": 21716,
    "emp_2035": 22437,
-   "growth_5y": 3.0,
+   "growth_5y": 3,
    "growth_10y": 6.4,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "4518",
@@ -2804,9 +2808,9 @@
    "emp_2035": 23456,
    "growth_5y": 4.9,
    "growth_10y": 11.5,
-   "pay_weekly": null,
+   "pay_weekly": 1224,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "5992",
@@ -2820,9 +2824,9 @@
    "emp_2035": 22672,
    "growth_5y": 3.2,
    "growth_10y": 7.8,
-   "pay_weekly": null,
+   "pay_weekly": 1384,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "2326",
@@ -2836,9 +2840,9 @@
    "emp_2035": 24144,
    "growth_5y": 9.9,
    "growth_10y": 17.6,
-   "pay_weekly": null,
+   "pay_weekly": 2036,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "1494",
@@ -2850,11 +2854,11 @@
    "emp_2025": 20033,
    "emp_2030": 21237,
    "emp_2035": 22485,
-   "growth_5y": 6.0,
+   "growth_5y": 6,
    "growth_10y": 12.2,
-   "pay_weekly": null,
+   "pay_weekly": 1771,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "1325",
@@ -2868,9 +2872,9 @@
    "emp_2035": 24308,
    "growth_5y": 12.8,
    "growth_10y": 22.8,
-   "pay_weekly": null,
+   "pay_weekly": 2448,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "1491",
@@ -2884,9 +2888,9 @@
    "emp_2035": 22089,
    "growth_5y": 5.7,
    "growth_10y": 12.1,
-   "pay_weekly": null,
+   "pay_weekly": 1806,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "2322",
@@ -2900,9 +2904,9 @@
    "emp_2035": 23199,
    "growth_5y": 10.2,
    "growth_10y": 18.6,
-   "pay_weekly": null,
+   "pay_weekly": 2301,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "4116",
@@ -2916,9 +2920,9 @@
    "emp_2035": 23711,
    "growth_5y": 10.6,
    "growth_10y": 21.8,
-   "pay_weekly": null,
+   "pay_weekly": 1472,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2722",
@@ -2932,9 +2936,9 @@
    "emp_2035": 23077,
    "growth_5y": 9.3,
    "growth_10y": 18.6,
-   "pay_weekly": null,
+   "pay_weekly": 1367,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "5991",
@@ -2948,9 +2952,9 @@
    "emp_2035": 21026,
    "growth_5y": 3.2,
    "growth_10y": 8.8,
-   "pay_weekly": null,
+   "pay_weekly": 1405,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "2325",
@@ -2962,11 +2966,11 @@
    "emp_2025": 18963,
    "emp_2030": 21057,
    "emp_2035": 22759,
-   "growth_5y": 11.0,
-   "growth_10y": 20.0,
-   "pay_weekly": null,
+   "growth_5y": 11,
+   "growth_10y": 20,
+   "pay_weekly": 2612,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "1341",
@@ -2978,11 +2982,11 @@
    "emp_2025": 18859,
    "emp_2030": 20556,
    "emp_2035": 21861,
-   "growth_5y": 9.0,
+   "growth_5y": 9,
    "growth_10y": 15.9,
-   "pay_weekly": null,
+   "pay_weekly": 1412,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "1333",
@@ -2996,9 +3000,9 @@
    "emp_2035": 21707,
    "growth_5y": 8.3,
    "growth_10y": 16.4,
-   "pay_weekly": null,
+   "pay_weekly": 1707,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "4421",
@@ -3012,9 +3016,9 @@
    "emp_2035": 20323,
    "growth_5y": 5.3,
    "growth_10y": 9.5,
-   "pay_weekly": null,
+   "pay_weekly": 1810,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "1413",
@@ -3030,7 +3034,7 @@
    "growth_10y": 7.4,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "5613",
@@ -3044,9 +3048,9 @@
    "emp_2035": 17865,
    "growth_5y": -3.2,
    "growth_10y": -0.3,
-   "pay_weekly": null,
+   "pay_weekly": 1424,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "7313",
@@ -3060,9 +3064,9 @@
    "emp_2035": 18639,
    "growth_5y": 3.2,
    "growth_10y": 6.3,
-   "pay_weekly": null,
+   "pay_weekly": 2524,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "3613",
@@ -3078,7 +3082,7 @@
    "growth_10y": 11.7,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "8111",
@@ -3092,9 +3096,9 @@
    "emp_2035": 17686,
    "growth_5y": -1.5,
    "growth_10y": 1.8,
-   "pay_weekly": null,
+   "pay_weekly": 1145,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2252",
@@ -3108,9 +3112,9 @@
    "emp_2035": 21178,
    "growth_5y": 13.6,
    "growth_10y": 23.1,
-   "pay_weekly": null,
+   "pay_weekly": 3201,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "4412",
@@ -3124,9 +3128,9 @@
    "emp_2035": 19096,
    "growth_5y": 6.3,
    "growth_10y": 11.4,
-   "pay_weekly": null,
+   "pay_weekly": 2280,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2339",
@@ -3139,10 +3143,10 @@
    "emp_2030": 19233,
    "emp_2035": 21039,
    "growth_5y": 12.4,
-   "growth_10y": 23.0,
-   "pay_weekly": null,
+   "growth_10y": 23,
+   "pay_weekly": 2502,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "8419",
@@ -3158,7 +3162,7 @@
    "growth_10y": 4.2,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3424",
@@ -3170,11 +3174,11 @@
    "emp_2025": 16991,
    "emp_2030": 16828,
    "emp_2035": 17630,
-   "growth_5y": -1.0,
+   "growth_5y": -1,
    "growth_10y": 3.8,
-   "pay_weekly": null,
+   "pay_weekly": 1595,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "6112",
@@ -3188,9 +3192,9 @@
    "emp_2035": 17138,
    "growth_5y": -1.6,
    "growth_10y": 2.6,
-   "pay_weekly": null,
+   "pay_weekly": 1314,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "3995",
@@ -3204,9 +3208,9 @@
    "emp_2035": 17630,
    "growth_5y": 2.7,
    "growth_10y": 8.3,
-   "pay_weekly": null,
+   "pay_weekly": 1779,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "7211",
@@ -3219,10 +3223,10 @@
    "emp_2030": 16050,
    "emp_2035": 16761,
    "growth_5y": -0.4,
-   "growth_10y": 4.0,
-   "pay_weekly": null,
+   "growth_10y": 4,
+   "pay_weekly": 1504,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2533",
@@ -3234,11 +3238,11 @@
    "emp_2025": 16101,
    "emp_2030": 18992,
    "emp_2035": 21390,
-   "growth_5y": 18.0,
+   "growth_5y": 18,
    "growth_10y": 32.8,
-   "pay_weekly": null,
+   "pay_weekly": 4657,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "4524",
@@ -3254,7 +3258,7 @@
    "growth_10y": 12.7,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3122",
@@ -3268,9 +3272,9 @@
    "emp_2035": 17842,
    "growth_5y": 5.2,
    "growth_10y": 11.3,
-   "pay_weekly": null,
+   "pay_weekly": 1738,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "6212",
@@ -3284,9 +3288,9 @@
    "emp_2035": 17311,
    "growth_5y": 3.3,
    "growth_10y": 8.1,
-   "pay_weekly": null,
+   "pay_weekly": 1123,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "2724",
@@ -3300,9 +3304,9 @@
    "emp_2035": 19152,
    "growth_5y": 11.6,
    "growth_10y": 21.2,
-   "pay_weekly": null,
+   "pay_weekly": 1758,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "1344",
@@ -3316,9 +3320,9 @@
    "emp_2035": 18829,
    "growth_5y": 9.7,
    "growth_10y": 19.6,
-   "pay_weekly": null,
+   "pay_weekly": 2640,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "2632",
@@ -3332,9 +3336,9 @@
    "emp_2035": 19516,
    "growth_5y": 14.9,
    "growth_10y": 25.4,
-   "pay_weekly": null,
+   "pay_weekly": 2202,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "5614",
@@ -3348,9 +3352,9 @@
    "emp_2035": 15266,
    "growth_5y": -4.8,
    "growth_10y": -1.6,
-   "pay_weekly": null,
+   "pay_weekly": 1250,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "2336",
@@ -3364,9 +3368,9 @@
    "emp_2035": 18369,
    "growth_5y": 11.2,
    "growth_10y": 18.5,
-   "pay_weekly": null,
+   "pay_weekly": 3365,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "2311",
@@ -3380,9 +3384,9 @@
    "emp_2035": 17609,
    "growth_5y": 5.7,
    "growth_10y": 13.7,
-   "pay_weekly": null,
+   "pay_weekly": 2496,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "6219",
@@ -3396,9 +3400,9 @@
    "emp_2035": 16778,
    "growth_5y": 3.4,
    "growth_10y": 8.5,
-   "pay_weekly": null,
+   "pay_weekly": 1133,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "2123",
@@ -3412,9 +3416,9 @@
    "emp_2035": 18429,
    "growth_5y": 9.7,
    "growth_10y": 19.1,
-   "pay_weekly": null,
+   "pay_weekly": 1862,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "2633",
@@ -3428,9 +3432,9 @@
    "emp_2035": 18800,
    "growth_5y": 11.4,
    "growth_10y": 21.9,
-   "pay_weekly": null,
+   "pay_weekly": 2577,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "7121",
@@ -3444,9 +3448,9 @@
    "emp_2035": 16435,
    "growth_5y": 3.6,
    "growth_10y": 7.8,
-   "pay_weekly": null,
+   "pay_weekly": 3031,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2113",
@@ -3458,11 +3462,11 @@
    "emp_2025": 15231,
    "emp_2030": 16143,
    "emp_2035": 17181,
-   "growth_5y": 6.0,
+   "growth_5y": 6,
    "growth_10y": 12.8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "2349",
@@ -3476,9 +3480,9 @@
    "emp_2035": 18548,
    "growth_5y": 13.1,
    "growth_10y": 24.7,
-   "pay_weekly": null,
+   "pay_weekly": 2052,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "8911",
@@ -3492,9 +3496,9 @@
    "emp_2035": 14954,
    "growth_5y": -1.6,
    "growth_10y": 1.5,
-   "pay_weekly": null,
+   "pay_weekly": 1434,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2245",
@@ -3508,9 +3512,9 @@
    "emp_2035": 18994,
    "growth_5y": 18.2,
    "growth_10y": 29.3,
-   "pay_weekly": null,
+   "pay_weekly": 2021,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "2323",
@@ -3524,9 +3528,9 @@
    "emp_2035": 17656,
    "growth_5y": 11.2,
    "growth_10y": 20.9,
-   "pay_weekly": null,
+   "pay_weekly": 1500,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "3512",
@@ -3542,7 +3546,7 @@
    "growth_10y": 9.5,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2121",
@@ -3556,9 +3560,9 @@
    "emp_2035": 17044,
    "growth_5y": 9.7,
    "growth_10y": 18.9,
-   "pay_weekly": null,
+   "pay_weekly": 1866,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "8994",
@@ -3572,9 +3576,9 @@
    "emp_2035": 14916,
    "growth_5y": 0.8,
    "growth_10y": 4.6,
-   "pay_weekly": null,
+   "pay_weekly": 1294,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "8115",
@@ -3588,9 +3592,9 @@
    "emp_2035": 14770,
    "growth_5y": -0.4,
    "growth_10y": 4.1,
-   "pay_weekly": null,
+   "pay_weekly": 1140,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2344",
@@ -3604,9 +3608,9 @@
    "emp_2035": 16334,
    "growth_5y": 10.2,
    "growth_10y": 16.6,
-   "pay_weekly": null,
+   "pay_weekly": 2618,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "8213",
@@ -3622,7 +3626,7 @@
    "growth_10y": 5.3,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "7219",
@@ -3636,9 +3640,9 @@
    "emp_2035": 14274,
    "growth_5y": -0.6,
    "growth_10y": 3.7,
-   "pay_weekly": null,
+   "pay_weekly": 1627,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "7119",
@@ -3651,10 +3655,10 @@
    "emp_2030": 14149,
    "emp_2035": 14877,
    "growth_5y": 3.7,
-   "growth_10y": 9.0,
-   "pay_weekly": null,
+   "growth_10y": 9,
+   "pay_weekly": 1456,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "8313",
@@ -3667,10 +3671,10 @@
    "emp_2030": 12961,
    "emp_2035": 13304,
    "growth_5y": -4.5,
-   "growth_10y": -2.0,
-   "pay_weekly": null,
+   "growth_10y": -2,
+   "pay_weekly": 1221,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2612",
@@ -3684,9 +3688,9 @@
    "emp_2035": 17083,
    "growth_5y": 15.9,
    "growth_10y": 26.9,
-   "pay_weekly": null,
+   "pay_weekly": 2252,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "8116",
@@ -3700,9 +3704,9 @@
    "emp_2035": 13909,
    "growth_5y": 0.1,
    "growth_10y": 3.8,
-   "pay_weekly": null,
+   "pay_weekly": 1250,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3623",
@@ -3716,9 +3720,9 @@
    "emp_2035": 14085,
    "growth_5y": 1.9,
    "growth_10y": 6.3,
-   "pay_weekly": null,
+   "pay_weekly": 1298,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2347",
@@ -3732,9 +3736,9 @@
    "emp_2035": 15459,
    "growth_5y": 9.1,
    "growth_10y": 17.8,
-   "pay_weekly": null,
+   "pay_weekly": 1862,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "6216",
@@ -3748,9 +3752,9 @@
    "emp_2035": 13731,
    "growth_5y": 2.4,
    "growth_10y": 6.6,
-   "pay_weekly": null,
+   "pay_weekly": 1286,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2712",
@@ -3764,9 +3768,9 @@
    "emp_2035": 15517,
    "growth_5y": 11.9,
    "growth_10y": 20.4,
-   "pay_weekly": null,
+   "pay_weekly": 2708,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "2241",
@@ -3780,9 +3784,9 @@
    "emp_2035": 15913,
    "growth_5y": 16.1,
    "growth_10y": 27.5,
-   "pay_weekly": null,
+   "pay_weekly": 2213,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "8399",
@@ -3796,9 +3800,9 @@
    "emp_2035": 12852,
    "growth_5y": -0.3,
    "growth_10y": 3.7,
-   "pay_weekly": null,
+   "pay_weekly": 1442,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2114",
@@ -3814,7 +3818,7 @@
    "growth_10y": 11.8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "3422",
@@ -3828,9 +3832,9 @@
    "emp_2035": 12600,
    "growth_5y": 0.8,
    "growth_10y": 5.2,
-   "pay_weekly": null,
+   "pay_weekly": 2797,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "8393",
@@ -3843,10 +3847,10 @@
    "emp_2030": 11331,
    "emp_2035": 11759,
    "growth_5y": -1.7,
-   "growth_10y": 2.0,
-   "pay_weekly": null,
+   "growth_10y": 2,
+   "pay_weekly": 1434,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "6391",
@@ -3862,7 +3866,7 @@
    "growth_10y": 4.6,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "2246",
@@ -3876,9 +3880,9 @@
    "emp_2035": 14174,
    "growth_5y": 15.7,
    "growth_10y": 25.9,
-   "pay_weekly": null,
+   "pay_weekly": 1780,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "4314",
@@ -3890,11 +3894,11 @@
    "emp_2025": 11073,
    "emp_2030": 11622,
    "emp_2035": 12464,
-   "growth_5y": 5.0,
+   "growth_5y": 5,
    "growth_10y": 12.6,
-   "pay_weekly": null,
+   "pay_weekly": 1394,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "3241",
@@ -3906,11 +3910,11 @@
    "emp_2025": 11043,
    "emp_2030": 10706,
    "emp_2035": 11044,
-   "growth_5y": -3.0,
-   "growth_10y": 0.0,
-   "pay_weekly": null,
+   "growth_5y": -3,
+   "growth_10y": 0,
+   "pay_weekly": 1684,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2511",
@@ -3924,9 +3928,9 @@
    "emp_2035": 14181,
    "growth_5y": 16.6,
    "growth_10y": 30.4,
-   "pay_weekly": null,
+   "pay_weekly": 2090,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "3923",
@@ -3939,10 +3943,10 @@
    "emp_2030": 10819,
    "emp_2035": 11407,
    "growth_5y": -0.4,
-   "growth_10y": 5.0,
-   "pay_weekly": null,
+   "growth_10y": 5,
+   "pay_weekly": 1310,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "3321",
@@ -3958,7 +3962,7 @@
    "growth_10y": 7.6,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2112",
@@ -3970,11 +3974,11 @@
    "emp_2025": 10659,
    "emp_2030": 11190,
    "emp_2035": 11833,
-   "growth_5y": 5.0,
-   "growth_10y": 11.0,
+   "growth_5y": 5,
+   "growth_10y": 11,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "2312",
@@ -3987,10 +3991,10 @@
    "emp_2030": 11103,
    "emp_2035": 11813,
    "growth_5y": 5.3,
-   "growth_10y": 12.0,
-   "pay_weekly": null,
+   "growth_10y": 12,
+   "pay_weekly": 2218,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "2345",
@@ -4002,11 +4006,11 @@
    "emp_2025": 10520,
    "emp_2030": 11568,
    "emp_2035": 12598,
-   "growth_5y": 10.0,
+   "growth_5y": 10,
    "growth_10y": 19.8,
-   "pay_weekly": null,
+   "pay_weekly": 1948,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "1419",
@@ -4022,7 +4026,7 @@
    "growth_10y": 9.3,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "3211",
@@ -4036,9 +4040,9 @@
    "emp_2035": 11270,
    "growth_5y": 3.3,
    "growth_10y": 7.8,
-   "pay_weekly": null,
+   "pay_weekly": 1888,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2535",
@@ -4054,7 +4058,7 @@
    "growth_10y": 33.1,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2519",
@@ -4066,11 +4070,11 @@
    "emp_2025": 10444,
    "emp_2030": 12007,
    "emp_2035": 13259,
-   "growth_5y": 15.0,
-   "growth_10y": 27.0,
-   "pay_weekly": null,
+   "growth_5y": 15,
+   "growth_10y": 27,
+   "pay_weekly": 1812,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "3333",
@@ -4086,7 +4090,7 @@
    "growth_10y": 4.4,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2342",
@@ -4100,9 +4104,9 @@
    "emp_2035": 12250,
    "growth_5y": 10.3,
    "growth_10y": 19.6,
-   "pay_weekly": null,
+   "pay_weekly": 1828,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "2242",
@@ -4116,9 +4120,9 @@
    "emp_2035": 13185,
    "growth_5y": 17.3,
    "growth_10y": 29.1,
-   "pay_weekly": null,
+   "pay_weekly": 1995,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "3123",
@@ -4132,9 +4136,9 @@
    "emp_2035": 11268,
    "growth_5y": 5.6,
    "growth_10y": 11.9,
-   "pay_weekly": null,
+   "pay_weekly": 2580,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "2514",
@@ -4146,11 +4150,11 @@
    "emp_2025": 10047,
    "emp_2030": 11856,
    "emp_2035": 13357,
-   "growth_5y": 18.0,
+   "growth_5y": 18,
    "growth_10y": 32.9,
-   "pay_weekly": null,
+   "pay_weekly": 2280,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "3231",
@@ -4162,11 +4166,11 @@
    "emp_2025": 10006,
    "emp_2030": 10110,
    "emp_2035": 10700,
-   "growth_5y": 1.0,
+   "growth_5y": 1,
    "growth_10y": 6.9,
-   "pay_weekly": null,
+   "pay_weekly": 1978,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "4517",
@@ -4180,9 +4184,9 @@
    "emp_2035": 11288,
    "growth_5y": 4.4,
    "growth_10y": 12.9,
-   "pay_weekly": null,
+   "pay_weekly": 1350,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "3243",
@@ -4194,11 +4198,11 @@
    "emp_2025": 9808,
    "emp_2030": 9518,
    "emp_2035": 9823,
-   "growth_5y": -3.0,
+   "growth_5y": -3,
    "growth_10y": 0.2,
-   "pay_weekly": null,
+   "pay_weekly": 1660,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3992",
@@ -4210,11 +4214,11 @@
    "emp_2025": 9539,
    "emp_2030": 9923,
    "emp_2035": 10405,
-   "growth_5y": 4.0,
+   "growth_5y": 4,
    "growth_10y": 9.1,
-   "pay_weekly": null,
+   "pay_weekly": 3424,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "2522",
@@ -4226,11 +4230,11 @@
    "emp_2025": 9489,
    "emp_2030": 11291,
    "emp_2035": 12712,
-   "growth_5y": 19.0,
-   "growth_10y": 34.0,
+   "growth_5y": 19,
+   "growth_10y": 34,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2341",
@@ -4244,9 +4248,9 @@
    "emp_2035": 11088,
    "growth_5y": 8.8,
    "growth_10y": 17.5,
-   "pay_weekly": null,
+   "pay_weekly": 1934,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "2521",
@@ -4259,10 +4263,10 @@
    "emp_2030": 10731,
    "emp_2035": 12150,
    "growth_5y": 20.1,
-   "growth_10y": 36.0,
+   "growth_10y": 36,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2542",
@@ -4276,9 +4280,9 @@
    "emp_2035": 10874,
    "growth_5y": 11.7,
    "growth_10y": 23.2,
-   "pay_weekly": null,
+   "pay_weekly": 2203,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "2711",
@@ -4294,7 +4298,7 @@
    "growth_10y": 20.9,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "3331",
@@ -4308,9 +4312,9 @@
    "emp_2035": 8639,
    "growth_5y": 0.1,
    "growth_10y": 3.6,
-   "pay_weekly": null,
+   "pay_weekly": 1341,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3233",
@@ -4322,11 +4326,11 @@
    "emp_2025": 8286,
    "emp_2030": 8536,
    "emp_2035": 8946,
-   "growth_5y": 3.0,
-   "growth_10y": 8.0,
+   "growth_5y": 3,
+   "growth_10y": 8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "6395",
@@ -4342,7 +4346,7 @@
    "growth_10y": 4.3,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "8391",
@@ -4356,9 +4360,9 @@
    "emp_2035": 8400,
    "growth_5y": 1.3,
    "growth_10y": 5.2,
-   "pay_weekly": null,
+   "pay_weekly": 1393,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "3932",
@@ -4371,10 +4375,10 @@
    "emp_2030": 8264,
    "emp_2035": 8752,
    "growth_5y": 3.8,
-   "growth_10y": 10.0,
+   "growth_10y": 10,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "5996",
@@ -4388,9 +4392,9 @@
    "emp_2035": 8549,
    "growth_5y": 2.3,
    "growth_10y": 7.8,
-   "pay_weekly": null,
+   "pay_weekly": 1880,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "8219",
@@ -4403,10 +4407,10 @@
    "emp_2030": 7864,
    "emp_2035": 7973,
    "growth_5y": -0.4,
-   "growth_10y": 1.0,
-   "pay_weekly": null,
+   "growth_10y": 1,
+   "pay_weekly": 1720,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2111",
@@ -4422,7 +4426,7 @@
    "growth_10y": 11.7,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "4112",
@@ -4436,9 +4440,9 @@
    "emp_2035": 9100,
    "growth_5y": 9.5,
    "growth_10y": 20.6,
-   "pay_weekly": null,
+   "pay_weekly": 1802,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "3126",
@@ -4452,9 +4456,9 @@
    "emp_2035": 8170,
    "growth_5y": 5.4,
    "growth_10y": 10.7,
-   "pay_weekly": null,
+   "pay_weekly": 3295,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "7115",
@@ -4466,11 +4470,11 @@
    "emp_2025": 7304,
    "emp_2030": 7379,
    "emp_2035": 7677,
-   "growth_5y": 1.0,
+   "growth_5y": 1,
    "growth_10y": 5.1,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "6399",
@@ -4482,11 +4486,11 @@
    "emp_2025": 7272,
    "emp_2030": 7276,
    "emp_2035": 7545,
-   "growth_5y": 0.0,
+   "growth_5y": 0,
    "growth_10y": 3.8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "2331",
@@ -4502,7 +4506,7 @@
    "growth_10y": 23.2,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "2532",
@@ -4518,7 +4522,7 @@
    "growth_10y": 33.2,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "8991",
@@ -4532,9 +4536,9 @@
    "emp_2035": 7327,
    "growth_5y": 0.4,
    "growth_10y": 3.9,
-   "pay_weekly": null,
+   "pay_weekly": 1358,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "5997",
@@ -4548,9 +4552,9 @@
    "emp_2035": 7499,
    "growth_5y": 2.4,
    "growth_10y": 6.4,
-   "pay_weekly": null,
+   "pay_weekly": 1412,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "3993",
@@ -4562,11 +4566,11 @@
    "emp_2025": 7020,
    "emp_2030": 7229,
    "emp_2035": 7511,
-   "growth_5y": 3.0,
-   "growth_10y": 7.0,
-   "pay_weekly": null,
+   "growth_5y": 3,
+   "growth_10y": 7,
+   "pay_weekly": 1459,
    "shortage": null,
-   "ai_exposure": 5.0
+   "ai_exposure": 5
   },
   {
    "code": "5993",
@@ -4579,10 +4583,10 @@
    "emp_2030": 7096,
    "emp_2035": 7466,
    "growth_5y": 2.6,
-   "growth_10y": 8.0,
-   "pay_weekly": null,
+   "growth_10y": 8,
+   "pay_weekly": 1630,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "8215",
@@ -4596,9 +4600,9 @@
    "emp_2035": 6944,
    "growth_5y": -2.3,
    "growth_10y": 0.5,
-   "pay_weekly": null,
+   "pay_weekly": 1456,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "6392",
@@ -4612,9 +4616,9 @@
    "emp_2035": 7146,
    "growth_5y": 0.2,
    "growth_10y": 4.1,
-   "pay_weekly": null,
+   "pay_weekly": 1331,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "3125",
@@ -4628,9 +4632,9 @@
    "emp_2035": 7624,
    "growth_5y": 5.9,
    "growth_10y": 12.6,
-   "pay_weekly": null,
+   "pay_weekly": 1823,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "4512",
@@ -4642,11 +4646,11 @@
    "emp_2025": 6661,
    "emp_2030": 6862,
    "emp_2035": 7223,
-   "growth_5y": 3.0,
+   "growth_5y": 3,
    "growth_10y": 8.4,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "4113",
@@ -4660,9 +4664,9 @@
    "emp_2035": 7851,
    "growth_5y": 9.6,
    "growth_10y": 18.5,
-   "pay_weekly": null,
+   "pay_weekly": 1130,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "3996",
@@ -4678,7 +4682,7 @@
    "growth_10y": 10.2,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "3124",
@@ -4692,9 +4696,9 @@
    "emp_2035": 7300,
    "growth_5y": 4.9,
    "growth_10y": 12.1,
-   "pay_weekly": null,
+   "pay_weekly": 2736,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "1414",
@@ -4707,10 +4711,10 @@
    "emp_2030": 6561,
    "emp_2035": 6905,
    "growth_5y": 1.7,
-   "growth_10y": 7.0,
+   "growth_10y": 7,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "2534",
@@ -4726,7 +4730,7 @@
    "growth_10y": 32.3,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "3242",
@@ -4742,7 +4746,7 @@
    "growth_10y": 2.5,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "8992",
@@ -4755,10 +4759,10 @@
    "emp_2030": 6221,
    "emp_2035": 6486,
    "growth_5y": -1.2,
-   "growth_10y": 3.0,
+   "growth_10y": 3,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 0.0
+   "ai_exposure": 0
   },
   {
    "code": "7112",
@@ -4772,9 +4776,9 @@
    "emp_2035": 6645,
    "growth_5y": 1.6,
    "growth_10y": 5.8,
-   "pay_weekly": null,
+   "pay_weekly": 2116,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "7113",
@@ -4788,9 +4792,9 @@
    "emp_2035": 6202,
    "growth_5y": -1.6,
    "growth_10y": 0.8,
-   "pay_weekly": null,
+   "pay_weekly": 1361,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2526",
@@ -4802,11 +4806,11 @@
    "emp_2025": 6144,
    "emp_2030": 7371,
    "emp_2035": 8338,
-   "growth_5y": 20.0,
+   "growth_5y": 20,
    "growth_10y": 35.7,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "4514",
@@ -4822,7 +4826,7 @@
    "growth_10y": 9.3,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "4319",
@@ -4836,9 +4840,9 @@
    "emp_2035": 6782,
    "growth_5y": 5.2,
    "growth_10y": 11.3,
-   "pay_weekly": null,
+   "pay_weekly": 1277,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "7116",
@@ -4852,9 +4856,9 @@
    "emp_2035": 6504,
    "growth_5y": 2.1,
    "growth_10y": 7.5,
-   "pay_weekly": null,
+   "pay_weekly": 1164,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2122",
@@ -4868,9 +4872,9 @@
    "emp_2035": 7134,
    "growth_5y": 9.5,
    "growth_10y": 18.2,
-   "pay_weekly": null,
+   "pay_weekly": 2500,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "3621",
@@ -4886,7 +4890,7 @@
    "growth_10y": 4.8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "8216",
@@ -4900,9 +4904,9 @@
    "emp_2035": 5836,
    "growth_5y": -1.5,
    "growth_10y": 1.2,
-   "pay_weekly": null,
+   "pay_weekly": 2324,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "5619",
@@ -4916,9 +4920,9 @@
    "emp_2035": 5660,
    "growth_5y": -4.1,
    "growth_10y": -1.5,
-   "pay_weekly": null,
+   "pay_weekly": 1155,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "3222",
@@ -4932,9 +4936,9 @@
    "emp_2035": 6288,
    "growth_5y": 5.3,
    "growth_10y": 10.5,
-   "pay_weekly": null,
+   "pay_weekly": 1286,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2334",
@@ -4948,9 +4952,9 @@
    "emp_2035": 6914,
    "growth_5y": 12.2,
    "growth_10y": 22.9,
-   "pay_weekly": null,
+   "pay_weekly": 1782,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "8312",
@@ -4964,9 +4968,9 @@
    "emp_2035": 5414,
    "growth_5y": -5.6,
    "growth_10y": -3.4,
-   "pay_weekly": null,
+   "pay_weekly": 1325,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "4313",
@@ -4980,9 +4984,9 @@
    "emp_2035": 5944,
    "growth_5y": 5.1,
    "growth_10y": 11.3,
-   "pay_weekly": null,
+   "pay_weekly": 1468,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "6393",
@@ -4994,11 +4998,11 @@
    "emp_2025": 5318,
    "emp_2030": 5371,
    "emp_2035": 5607,
-   "growth_5y": 1.0,
+   "growth_5y": 1,
    "growth_10y": 5.4,
-   "pay_weekly": null,
+   "pay_weekly": 1153,
    "shortage": null,
-   "ai_exposure": 10.0
+   "ai_exposure": 10
   },
   {
    "code": "4513",
@@ -5010,11 +5014,11 @@
    "emp_2025": 5123,
    "emp_2030": 5328,
    "emp_2035": 5642,
-   "growth_5y": 4.0,
+   "growth_5y": 4,
    "growth_10y": 10.1,
-   "pay_weekly": null,
+   "pay_weekly": 1443,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "4515",
@@ -5030,7 +5034,7 @@
    "growth_10y": 21.4,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "6217",
@@ -5046,7 +5050,7 @@
    "growth_10y": 7.8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "3994",
@@ -5059,10 +5063,10 @@
    "emp_2030": 4990,
    "emp_2035": 5250,
    "growth_5y": 8.3,
-   "growth_10y": 14.0,
+   "growth_10y": 14,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "8512",
@@ -5078,7 +5082,7 @@
    "growth_10y": 4.3,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "2243",
@@ -5091,10 +5095,10 @@
    "emp_2030": 5142,
    "emp_2035": 5598,
    "growth_5y": 15.7,
-   "growth_10y": 26.0,
-   "pay_weekly": null,
+   "growth_10y": 26,
+   "pay_weekly": 1954,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "1391",
@@ -5110,7 +5114,7 @@
    "growth_10y": 17.5,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "2493",
@@ -5124,9 +5128,9 @@
    "emp_2035": 4825,
    "growth_5y": 6.3,
    "growth_10y": 14.1,
-   "pay_weekly": null,
+   "pay_weekly": 2053,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "8394",
@@ -5140,9 +5144,9 @@
    "emp_2035": 4027,
    "growth_5y": -4.5,
    "growth_10y": -3.5,
-   "pay_weekly": null,
+   "pay_weekly": 1167,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "4234",
@@ -5155,10 +5159,10 @@
    "emp_2030": 4486,
    "emp_2035": 4737,
    "growth_5y": 7.9,
-   "growth_10y": 14.0,
-   "pay_weekly": null,
+   "growth_10y": 14,
+   "pay_weekly": 1784,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "3624",
@@ -5174,7 +5178,7 @@
    "growth_10y": 8.8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "3234",
@@ -5190,7 +5194,7 @@
    "growth_10y": 10.3,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "4411",
@@ -5206,7 +5210,7 @@
    "growth_10y": 9.4,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "4522",
@@ -5219,10 +5223,10 @@
    "emp_2030": 4292,
    "emp_2035": 4541,
    "growth_5y": 5.9,
-   "growth_10y": 12.0,
+   "growth_10y": 12,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "8416",
@@ -5238,7 +5242,7 @@
    "growth_10y": 2.6,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3991",
@@ -5254,7 +5258,7 @@
    "growth_10y": 3.6,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3113",
@@ -5270,7 +5274,7 @@
    "growth_10y": 5.4,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "3132",
@@ -5284,9 +5288,9 @@
    "emp_2035": 4276,
    "growth_5y": 5.5,
    "growth_10y": 13.7,
-   "pay_weekly": null,
+   "pay_weekly": 2334,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "8997",
@@ -5300,9 +5304,9 @@
    "emp_2035": 3896,
    "growth_5y": -0.1,
    "growth_10y": 4.4,
-   "pay_weekly": null,
+   "pay_weekly": 1286,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "8996",
@@ -5316,9 +5320,9 @@
    "emp_2035": 3799,
    "growth_5y": 1.7,
    "growth_10y": 4.9,
-   "pay_weekly": null,
+   "pay_weekly": 1272,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "1412",
@@ -5334,7 +5338,7 @@
    "growth_10y": 7.6,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "3921",
@@ -5348,9 +5352,9 @@
    "emp_2035": 3150,
    "growth_5y": -0.2,
    "growth_10y": 5.1,
-   "pay_weekly": null,
+   "pay_weekly": 1298,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "2232",
@@ -5366,7 +5370,7 @@
    "growth_10y": 16.1,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "5616",
@@ -5382,7 +5386,7 @@
    "growth_10y": 1.6,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 9.0
+   "ai_exposure": 9
   },
   {
    "code": "1113",
@@ -5398,7 +5402,7 @@
    "growth_10y": 10.9,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "6111",
@@ -5412,9 +5416,9 @@
    "emp_2035": 2812,
    "growth_5y": 0.1,
    "growth_10y": 4.8,
-   "pay_weekly": null,
+   "pay_weekly": 1635,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "3111",
@@ -5428,9 +5432,9 @@
    "emp_2035": 2868,
    "growth_5y": 3.2,
    "growth_10y": 8.7,
-   "pay_weekly": null,
+   "pay_weekly": 1944,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "3942",
@@ -5446,7 +5450,7 @@
    "growth_10y": 6.1,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "8995",
@@ -5460,9 +5464,9 @@
    "emp_2035": 2520,
    "growth_5y": -4.4,
    "growth_10y": -0.1,
-   "pay_weekly": null,
+   "pay_weekly": 1200,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   },
   {
    "code": "7111",
@@ -5475,10 +5479,10 @@
    "emp_2030": 2558,
    "emp_2035": 2669,
    "growth_5y": 1.6,
-   "growth_10y": 6.0,
-   "pay_weekly": null,
+   "growth_10y": 6,
+   "pay_weekly": 1479,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "5611",
@@ -5494,7 +5498,7 @@
    "growth_10y": -2.3,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "3221",
@@ -5510,7 +5514,7 @@
    "growth_10y": 4.8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "8413",
@@ -5526,7 +5530,7 @@
    "growth_10y": 6.3,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "3612",
@@ -5542,7 +5546,7 @@
    "growth_10y": 7.8,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 0.0
+   "ai_exposure": 0
   },
   {
    "code": "3933",
@@ -5554,11 +5558,11 @@
    "emp_2025": 2093,
    "emp_2030": 2114,
    "emp_2035": 2219,
-   "growth_5y": 1.0,
-   "growth_10y": 6.0,
+   "growth_5y": 1,
+   "growth_10y": 6,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "1211",
@@ -5574,7 +5578,7 @@
    "growth_10y": 17.6,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "7117",
@@ -5590,7 +5594,7 @@
    "growth_10y": 3.5,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "8392",
@@ -5602,11 +5606,11 @@
    "emp_2025": 1489,
    "emp_2030": 1474,
    "emp_2035": 1537,
-   "growth_5y": -1.0,
+   "growth_5y": -1,
    "growth_10y": 3.2,
-   "pay_weekly": null,
+   "pay_weekly": 1811,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "5615",
@@ -5622,7 +5626,7 @@
    "growth_10y": -1.7,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 8.0
+   "ai_exposure": 8
   },
   {
    "code": "3931",
@@ -5635,10 +5639,10 @@
    "emp_2030": 1420,
    "emp_2035": 1488,
    "growth_5y": 1.2,
-   "growth_10y": 6.0,
+   "growth_10y": 6,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "3922",
@@ -5652,9 +5656,9 @@
    "emp_2035": 1273,
    "growth_5y": 1.1,
    "growth_10y": 6.5,
-   "pay_weekly": null,
+   "pay_weekly": 1155,
    "shortage": null,
-   "ai_exposure": 7.0
+   "ai_exposure": 7
   },
   {
    "code": "4115",
@@ -5666,11 +5670,11 @@
    "emp_2025": 1193,
    "emp_2030": 1313,
    "emp_2035": 1434,
-   "growth_5y": 10.0,
+   "growth_5y": 10,
    "growth_10y": 20.2,
-   "pay_weekly": null,
+   "pay_weekly": 1398,
    "shortage": null,
-   "ai_exposure": 2.0
+   "ai_exposure": 2
   },
   {
    "code": "2413",
@@ -5686,7 +5690,7 @@
    "growth_10y": 11.9,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 4.0
+   "ai_exposure": 4
   },
   {
    "code": "7114",
@@ -5700,9 +5704,9 @@
    "emp_2035": 979,
    "growth_5y": 0.2,
    "growth_10y": 4.9,
-   "pay_weekly": null,
+   "pay_weekly": 1058,
    "shortage": null,
-   "ai_exposure": 6.0
+   "ai_exposure": 6
   },
   {
    "code": "8411",
@@ -5715,10 +5719,10 @@
    "emp_2030": 814,
    "emp_2035": 880,
    "growth_5y": 9.1,
-   "growth_10y": 18.0,
+   "growth_10y": 18,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 1.0
+   "ai_exposure": 1
   },
   {
    "code": "1392",
@@ -5734,7 +5738,7 @@
    "growth_10y": 16.7,
    "pay_weekly": null,
    "shortage": null,
-   "ai_exposure": 3.0
+   "ai_exposure": 3
   }
  ]
 }
