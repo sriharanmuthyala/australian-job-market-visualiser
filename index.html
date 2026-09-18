@@ -186,14 +186,14 @@ select.field{cursor:pointer}
 .below-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);gap:16px;margin-top:18px}
 .card{border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.018);padding:14px 15px}
 .card h3{font-size:9.5px;letter-spacing:.13em;color:var(--dimmer);margin:0 0 9px;font-weight:600}
-.movers{font-size:12px;display:grid;grid-template-columns:1fr 1fr;column-gap:28px}
-.movers h3{grid-column:1/-1}
-.movers h4{font-size:10px;color:var(--dimmer);margin:0 0 4px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.movers{font-size:12px}
+.movers-grid-inner{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.mover-col{min-width:0}
+.movers h4{font-size:10px;color:var(--dimmer);margin:0 0 5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
 .movers .row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:4px 0;cursor:pointer}
 .movers .row:hover .nm{color:var(--fg)}
 .movers .nm{color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .movers .vl{font-family:"Space Grotesk",sans-serif;font-weight:500}
-.movers hr{display:none}
 .guide p{margin:0 0 9px;color:var(--dim);font-size:12px;line-height:1.55}
 .guide p:last-child{margin-bottom:0}
 .guide b{color:var(--fg);font-weight:600}
@@ -250,7 +250,7 @@ footer a{color:var(--dim)}
   #map{height:64vh;min-height:440px}
   .map-head{align-items:flex-start;flex-direction:column}
   .below-grid{grid-template-columns:1fr}
-  .movers{grid-template-columns:1fr}
+  .movers-grid-inner{grid-template-columns:1fr;gap:16px}
 }
 </style>
 </head>
@@ -385,7 +385,7 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const hx=h=>[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];
 const rgbs=a=>`rgb(${a.map(v=>Math.round(v)).join(",")})`;
 const mix=(a,b,t)=>a.map((v,i)=>v+(b[i]-v)*t);
-const NODATA="#c9c4ba";
+const NODATA="#37414b";
 const lightBg=c=>{const m=c.match(/\d+/g);if(!m)return false;const[r,g,b]=m.map(Number);return (0.299*r+0.587*g+0.114*b)>150;};
 
 function ramp(stops,t){
@@ -401,12 +401,12 @@ function ramp(stops,t){
 const css=s=>`linear-gradient(90deg,${s.map(([p,c])=>`${c} ${(p*100).toFixed(0)}%`).join(",")})`;
 
 /* crimson -> slate hinge at zero -> teal */
-const OUT=[[0,"#6d0c2b"],[.16,"#b8294c"],[.29,"#ded8cc"],[.45,"#3f9b86"],[.72,"#12806a"],[1,"#075044"]];
-const PAYR=[[0,"#e3ddd0"],[.4,"#7fae86"],[.75,"#2f7d6b"],[1,"#12403c"]];
-const AIR=[[0,"#dcd8cc"],[.3,"#8a8cc4"],[.6,"#7a3fae"],[.82,"#5c1d86"],[1,"#33094d"]];
-const SKILLC={1:"#31589e",2:"#237f96",3:"#2a8a6a",4:"#a8862c",5:"#b0562c"};
-const GRPC={"1":"#3a63a8","2":"#6f47a8","3":"#b05c2c","4":"#2a8a70","5":"#a83a68",
-            "6":"#9c7c26","7":"#2f7f9c","8":"#6d8a30","9":"#6d8a30"};
+const OUT=[[0,"#7a1834"],[.16,"#d34b69"],[.29,"#4a5662"],[.45,"#3c8f7d"],[.72,"#20a07b"],[1,"#0d6d58"]];
+const PAYR=[[0,"#33414d"],[.35,"#356a79"],[.65,"#2c9279"],[.84,"#72ad72"],[1,"#e0b85b"]];
+const AIR=[[0,"#35414d"],[.3,"#5866a0"],[.6,"#7656bf"],[.82,"#a04ed3"],[1,"#6e1fa4"]];
+const SKILLC={1:"#4777c9",2:"#358da8",3:"#35a17d",4:"#c79b3b",5:"#c46842"};
+const GRPC={"1":"#4c78c7","2":"#7959c7","3":"#c86c42","4":"#32a47f","5":"#c05282",
+            "6":"#b49536","7":"#3c91ae","8":"#7e9f43","9":"#7e9f43"};
 
 const jobs=n=>n>=1e6?(n/1e6).toFixed(n>=1e8?0:1)+"M":Math.round(n/1e3)+"K";
 const sgn=v=>(v>0?"+":"")+v.toFixed(0)+"%";
@@ -520,9 +520,11 @@ function buildMovers(rows){
   const dn=[...ok].sort((a,b)=>a[f]-b[f]).slice(0,6);
   const row=(d,cls)=>`<div class="row" data-name="${(d.name||"").toLowerCase().replace(/"/g,"")}">
       <span class="nm">${d.name}</span><span class="vl ${cls}">${sgn1(d[f])}</span></div>`;
-  $("#movers").innerHTML=`<h3>BIGGEST MOVERS</h3>
-    <h4>Growing fastest</h4>${up.map(d=>row(d,"up")).join("")}
-    <hr><h4>Shrinking fastest</h4>${dn.map(d=>row(d,"down")).join("")}`;
+  $("#movers").innerHTML=`<h3>BIGGEST MOVERS · OUTLOOK</h3>
+    <div class="movers-grid-inner">
+      <div class="mover-col"><h4>Growing fastest</h4>${up.map(d=>row(d,"up")).join("")}</div>
+      <div class="mover-col"><h4>Shrinking fastest</h4>${dn.map(d=>row(d,"down")).join("")}</div>
+    </div>`;
   $("#movers").querySelectorAll(".row").forEach(r=>{
     r.onclick=()=>{
       map.querySelectorAll(".tile").forEach(t=>t.classList.remove("flash"));
