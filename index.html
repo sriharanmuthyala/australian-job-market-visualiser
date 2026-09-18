@@ -68,6 +68,9 @@ button,input,select{font:inherit}
 }
 .data-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--up)}
 .data-chip.experimental::before{background:var(--hot)}
+.source-note{margin:9px 0 0;color:var(--dimmer);font-size:11px;line-height:1.55}
+.source-note b{color:var(--dim);font-weight:600}
+.source-note a{color:var(--dim)}
 
 /* ---- key figures ---- */
 .ticker{
@@ -272,6 +275,9 @@ footer a{color:var(--dim)}
   <span class="data-chip">Official data · JSA / ABS</span>
   <span class="data-chip experimental">Experimental · AI task exposure</span>
 </div>
+<p class="source-note"><b>Source:</b> Employment and growth projections come from
+<a href="https://www.jobsandskills.gov.au/data/employment-projections" target="_blank" rel="noopener">Jobs and Skills Australia — Employment Projections May 2025 to May 2035</a>.
+Median weekly earnings come from JSA occupation profiles using ABS earnings data. The AI task-exposure layer is an independent experimental estimate created for this visualisation.</p>
 
 <div class="ticker" id="ticker"></div>
 
