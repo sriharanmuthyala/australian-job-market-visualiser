@@ -226,14 +226,8 @@ select.field{cursor:pointer}
 .bar-track{height:11px;background:#0d1319;border:1px solid #202b35;border-radius:999px;overflow:hidden}
 .bar-fill{height:100%;border-radius:999px;min-width:2px}
 .bar-value{font-family:"Space Grotesk",sans-serif;font-size:10.5px;color:var(--fg);text-align:right}
-.scatter-wrap{position:relative;width:100%;height:310px}
-.scatter-wrap svg{width:100%;height:100%;display:block;overflow:visible}
-.scatter-grid{stroke:#26313d;stroke-width:1}
-.scatter-axis{stroke:#465361;stroke-width:1}
-.scatter-label{fill:#71808d;font-size:9.5px;font-family:Inter,system-ui,sans-serif}
-.scatter-dot{cursor:pointer;stroke:#0b0f14;stroke-width:1.2;opacity:.82}
-.scatter-dot:hover{opacity:1;stroke:#fff;stroke-width:1.6}
-.scatter-ref{stroke:#697787;stroke-width:1;stroke-dasharray:4 4;opacity:.55}
+.growth-chart .bar-row{grid-template-columns:minmax(150px,230px) minmax(100px,1fr) 72px}
+.growth-chart .bar-fill{background:var(--up)}
 .chart-empty{height:220px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--dimmer);font-size:12px}
 
 @media (max-width:900px){
@@ -243,7 +237,41 @@ select.field{cursor:pointer}
   .charts-head{align-items:flex-start;flex-direction:column}
   .charts-head .chart-note{white-space:normal}
   .bar-row{grid-template-columns:minmax(105px,145px) minmax(80px,1fr) 52px}
-  .scatter-wrap{height:280px}
+  .growth-chart .bar-row{grid-template-columns:minmax(120px,160px) minmax(70px,1fr) 62px}
+}
+
+/* ---- occupation detail panel ---- */
+.detail-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:38;opacity:0;pointer-events:none;transition:.18s ease}
+.detail-backdrop.open{opacity:1;pointer-events:auto}
+.detail-panel{
+  position:fixed;top:0;right:0;height:100vh;width:min(420px,92vw);z-index:40;
+  background:#111821;border-left:1px solid var(--line2);box-shadow:-18px 0 50px rgba(0,0,0,.38);
+  transform:translateX(100%);transition:transform .2s ease;padding:20px;overflow:auto
+}
+.detail-panel.open{transform:translateX(0)}
+.detail-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.detail-close{
+  border:1px solid var(--line);background:transparent;color:var(--dim);border-radius:6px;
+  width:32px;height:32px;cursor:pointer;font-size:18px;line-height:1
+}
+.detail-close:hover{color:var(--fg);border-color:var(--line2)}
+.detail-panel h2{font-family:"Space Grotesk",sans-serif;font-size:25px;line-height:1.08;letter-spacing:-.03em;margin:3px 0 4px}
+.detail-code{font-size:10.5px;color:var(--dimmer);letter-spacing:.08em}
+.detail-group{font-size:12px;color:var(--dim);margin-top:5px}
+.detail-metrics{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:20px 0}
+.detail-metric{border:1px solid var(--line);border-radius:7px;background:#0d1319;padding:10px}
+.detail-metric span{display:block;font-size:9px;color:var(--dimmer);letter-spacing:.08em;text-transform:uppercase}
+.detail-metric strong{display:block;font-family:"Space Grotesk",sans-serif;font-size:18px;margin-top:3px}
+.detail-note{font-size:11.5px;color:var(--dim);line-height:1.6;border-top:1px solid var(--line);padding-top:14px}
+.detail-actions{display:flex;gap:8px;margin-top:16px}
+.detail-link{
+  display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid var(--line2);
+  background:#1a2530;color:var(--fg);border-radius:6px;padding:8px 11px;font-size:12px
+}
+.detail-link:hover{border-color:#5b6977;background:#202d39}
+@media (max-width:620px){
+  .detail-panel{width:100vw}
+  .detail-metrics{grid-template-columns:1fr 1fr}
 }
 
 /* ---- tooltip / methodology ---- */
@@ -404,8 +432,8 @@ Median weekly earnings come from JSA occupation profiles using ABS earnings data
   <div class="charts-head">
     <div>
       <div class="eyebrow">SUPPORTING VIEWS</div>
-      <h2>See the patterns behind the treemap</h2>
-      <p>These charts update with the same filters as the main visual.</p>
+      <h2>Two simple ways to compare the market</h2>
+      <p>Both views update with the same filters as the treemap.</p>
     </div>
     <div class="chart-note">Official labour-market measures + experimental AI layer</div>
   </div>
@@ -425,12 +453,12 @@ Median weekly earnings come from JSA occupation profiles using ABS earnings data
     <article class="chart-card">
       <div class="chart-card-head">
         <div>
-          <h3>MEDIAN WEEKLY PAY VS AI TASK EXPOSURE</h3>
-          <div class="chart-sub">Each dot is an occupation · AI score is experimental</div>
+          <h3>TOP PROJECTED JOB GAINS TO 2035</h3>
+          <div class="chart-sub">Occupations expected to add the most workers in the filtered view</div>
         </div>
-        <div class="chart-count" id="scatterCount"></div>
+        <div class="chart-count" id="growthChartCount"></div>
       </div>
-      <div class="scatter-wrap" id="payAiChart"></div>
+      <div class="bar-chart growth-chart" id="growthChart"></div>
     </article>
   </div>
 </section>
@@ -452,6 +480,23 @@ Median weekly earnings come from JSA occupation profiles using ABS earnings data
   adapted for Australian labour-market data by Sri Muthyala.
 </footer>
 </div>
+
+<div class="detail-backdrop" id="detailBackdrop"></div>
+<aside class="detail-panel" id="detailPanel" aria-hidden="true">
+  <div class="detail-top">
+    <div>
+      <div class="detail-code" id="detailCode"></div>
+      <h2 id="detailName"></h2>
+      <div class="detail-group" id="detailGroup"></div>
+    </div>
+    <button class="detail-close" id="detailClose" type="button" aria-label="Close occupation details">×</button>
+  </div>
+  <div class="detail-metrics" id="detailMetrics"></div>
+  <div class="detail-note" id="detailNote"></div>
+  <div class="detail-actions">
+    <a class="detail-link" id="detailJsa" target="_blank" rel="noopener">Open JSA profile ↗</a>
+  </div>
+</aside>
 
 <div id="tip" role="tooltip"></div>
 
@@ -514,6 +559,10 @@ const LAYERS=[
    colour:v=>GRPC[v]||NODATA,
    cats:[["1","Managers"],["2","Professionals"],["3","Technicians & trades"],["4","Community & personal service"],
          ["5","Clerical & administrative"],["6","Sales"],["7","Machinery operators & drivers"],["8","Labourers"]],map:GRPC},
+  {id:"shortage",label:"2025 shortage status",optional:true,swatch:"linear-gradient(90deg,#465361,#e7b85c)",
+   get:d=>d.shortage,fmt:v=>v==null?"—":(v?"In shortage":"No shortage"),tileFmt:v=>v?"Shortage":"No shortage",
+   colour:v=>v==null?NODATA:(v?"#b58a35":"#40505d"),
+   cats:[[false,"No shortage"],[true,"In shortage"]],map:{false:"#40505d",true:"#b58a35"}},
   {id:"ai_exposure",label:"AI task exposure",experimental:true,swatch:css(AIR),
    get:d=>d.ai_exposure,fmt:v=>v==null?"—":v.toFixed(1)+"/10",tileFmt:v=>v.toFixed(0)+"/10",
    colour:v=>v==null?NODATA:ramp(AIR,v/10),
@@ -555,7 +604,7 @@ const live=l=>DATA.occupations.some(d=>{const v=l.get(d);return v!=null&&v!=="";
 
 function buildRail(){
   const box=$("#layers"); box.innerHTML="";
-  LAYERS.forEach(l=>{
+  LAYERS.filter(l=>!l.optional||live(l)).forEach(l=>{
     const b=document.createElement("button");
     b.type="button"; b.disabled=!live(l);
     b.setAttribute("aria-pressed",String(l.id===LAYER.id));
@@ -666,70 +715,65 @@ function buildGroupChart(rows){
   });
 }
 
-function median(vals){
-  const a=vals.filter(v=>Number.isFinite(v)).sort((x,y)=>x-y);
-  if(!a.length) return null;
-  const m=Math.floor(a.length/2);
-  return a.length%2?a[m]:(a[m-1]+a[m])/2;
-}
-
-function buildPayAiChart(rows){
-  const host=$("#payAiChart"), count=$("#scatterCount");
-  const pts=rows.filter(d=>d.pay_weekly!=null&&d.ai_exposure!=null&&Number.isFinite(+d.pay_weekly)&&Number.isFinite(+d.ai_exposure));
-  count.textContent=pts.length ? pts.length+" occupations" : "";
-  if(!pts.length){
-    host.innerHTML='<div class="chart-empty">Pay data is not available for the occupations in this filtered view.</div>';
+function buildGrowthChart(rows){
+  const box=$("#growthChart"), count=$("#growthChartCount");
+  const data=rows
+    .filter(d=>d.emp_2025!=null&&d.emp_2035!=null)
+    .map(d=>({d,gain:d.emp_2035-d.emp_2025}))
+    .filter(x=>x.gain>0)
+    .sort((a,b)=>b.gain-a.gain)
+    .slice(0,10);
+  count.textContent=data.length ? "Top "+data.length : "";
+  if(!data.length){
+    box.innerHTML='<div class="chart-empty">No positive projected job gains match the current filters.</div>';
     return;
   }
-
-  const W=Math.max(520,host.clientWidth||520), H=Math.max(280,host.clientHeight||310);
-  const pad={l:52,r:16,t:14,b:38};
-  const iw=W-pad.l-pad.r, ih=H-pad.t-pad.b;
-  const maxPay=Math.max(...pts.map(d=>+d.pay_weekly));
-  const xMax=Math.max(1500,Math.ceil(maxPay/500)*500);
-  const x=v=>pad.l+(v/xMax)*iw;
-  const y=v=>pad.t+ih-(v/10)*ih;
-  const medPay=median(pts.map(d=>+d.pay_weekly));
-  const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
-
-  let svg=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Scatter plot of median weekly pay against experimental AI task exposure">`;
-
-  [0,2,4,6,8,10].forEach(v=>{
-    const yy=y(v);
-    svg+=`<line class="scatter-grid" x1="${pad.l}" y1="${yy}" x2="${W-pad.r}" y2="${yy}"></line>`;
-    svg+=`<text class="scatter-label" x="${pad.l-9}" y="${yy+3}" text-anchor="end">${v}</text>`;
-  });
-  const xTicks=4;
-  for(let i=0;i<=xTicks;i++){
-    const v=xMax*i/xTicks, xx=x(v);
-    svg+=`<line class="scatter-grid" x1="${xx}" y1="${pad.t}" x2="${xx}" y2="${pad.t+ih}"></line>`;
-    svg+=`<text class="scatter-label" x="${xx}" y="${H-17}" text-anchor="middle">${Math.round(v).toLocaleString()}</text>`;
-  }
-
-  svg+=`<line class="scatter-axis" x1="${pad.l}" y1="${pad.t+ih}" x2="${W-pad.r}" y2="${pad.t+ih}"></line>`;
-  svg+=`<line class="scatter-axis" x1="${pad.l}" y1="${pad.t}" x2="${pad.l}" y2="${pad.t+ih}"></line>`;
-  svg+=`<line class="scatter-ref" x1="${pad.l}" y1="${y(7)}" x2="${W-pad.r}" y2="${y(7)}"></line>`;
-  if(medPay!=null) svg+=`<line class="scatter-ref" x1="${x(medPay)}" y1="${pad.t}" x2="${x(medPay)}" y2="${pad.t+ih}"></line>`;
-
-  svg+=`<text class="scatter-label" x="${pad.l+iw/2}" y="${H-3}" text-anchor="middle">Median weekly pay (AUD)</text>`;
-  svg+=`<text class="scatter-label" x="12" y="${pad.t+ih/2}" text-anchor="middle" transform="rotate(-90 12 ${pad.t+ih/2})">AI task exposure (0–10)</text>`;
-
-  pts.forEach((d,i)=>{
-    const r=3.2+Math.min(4.8,Math.sqrt((d.emp_2025||0)/25000));
-    svg+=`<circle class="scatter-dot" data-index="${i}" cx="${x(+d.pay_weekly).toFixed(1)}" cy="${y(+d.ai_exposure).toFixed(1)}" r="${r.toFixed(1)}" fill="${GRPC[String(d.major)]||"#6f7d89"}"><title>${esc(d.name)} — ${(+d.pay_weekly).toLocaleString()}/wk · AI ${(+d.ai_exposure).toFixed(0)}/10</title></circle>`;
-  });
-  svg+="</svg>";
-  host.innerHTML=svg;
-
-  host.querySelectorAll(".scatter-dot").forEach(el=>{
-    const d=pts[Number(el.dataset.index)];
-    el.addEventListener("mousemove",e=>showTip(e,d));
-    el.addEventListener("mouseleave",()=>{tip.style.display="none";});
-    el.addEventListener("click",()=>window.open(jsaUrl(d),"_blank","noopener"));
+  const max=data[0].gain||1;
+  box.innerHTML=data.map(x=>`
+    <div class="bar-row" data-code="${x.d.code}" title="View ${x.d.name}">
+      <div class="bar-label">${x.d.name}</div>
+      <div class="bar-track"><div class="bar-fill" style="width:${(x.gain/max*100).toFixed(1)}%"></div></div>
+      <div class="bar-value">+${jobs(x.gain)}</div>
+    </div>`).join("");
+  box.querySelectorAll(".bar-row").forEach(el=>{
+    const d=data.find(x=>x.d.code===el.dataset.code)?.d;
+    if(d) el.onclick=()=>openDetail(d);
   });
 }
 
 const jsaUrl=d=>d.url||"https://www.jobsandskills.gov.au/data/occupation-and-industry-profiles?search="+encodeURIComponent(d.name);
+
+function openDetail(d){
+  const panel=$("#detailPanel"), backdrop=$("#detailBackdrop");
+  $("#detailCode").textContent="ANZSCO "+d.code;
+  $("#detailName").textContent=d.name;
+  $("#detailGroup").textContent=d.major_name||"";
+  const shortage=d.shortage==null?"Not loaded":(d.shortage?"In shortage":"No shortage");
+  const metrics=[
+    ["Employed · 2025",d.emp_2025!=null?d.emp_2025.toLocaleString():"—"],
+    ["Projected · 2035",d.emp_2035!=null?d.emp_2035.toLocaleString():"—"],
+    ["10-year outlook",d.growth_10y!=null?sgn1(d.growth_10y):"—"],
+    ["Median weekly pay",d.pay_weekly!=null?"$"+d.pay_weekly.toLocaleString():"—"],
+    ["Skill level",d.skill_levels||d.skill_level||"—"],
+    ["Shortage status",shortage],
+    ["AI task exposure",d.ai_exposure!=null?d.ai_exposure.toFixed(0)+"/10":"—"]
+  ];
+  $("#detailMetrics").innerHTML=metrics.map(x=>`<div class="detail-metric"><span>${x[0]}</span><strong>${x[1]}</strong></div>`).join("");
+  $("#detailNote").innerHTML=d.ai_rationale
+    ? "<b>Experimental AI note:</b> "+d.ai_rationale
+    : "Employment and growth figures are official JSA measures. The AI task-exposure score is experimental and should not be interpreted as a prediction of job loss.";
+  $("#detailJsa").href=jsaUrl(d);
+  panel.classList.add("open"); backdrop.classList.add("open"); panel.setAttribute("aria-hidden","false");
+  tip.style.display="none";
+}
+function closeDetail(){
+  $("#detailPanel").classList.remove("open");
+  $("#detailBackdrop").classList.remove("open");
+  $("#detailPanel").setAttribute("aria-hidden","true");
+}
+$("#detailClose").onclick=closeDetail;
+$("#detailBackdrop").onclick=closeDetail;
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDetail();});
 
 function filteredRows(){
   return DATA.occupations.filter(d=>{
@@ -756,7 +800,7 @@ function updateFilterStatus(rows){
 function render(){
   if(!DATA) return;
   const rows=filteredRows();
-  buildTicker(rows); buildMovers(rows); buildDist(rows); buildGroupChart(rows); buildPayAiChart(rows); updateFilterStatus(rows);
+  buildTicker(rows); buildMovers(rows); buildDist(rows); buildGroupChart(rows); buildGrowthChart(rows); updateFilterStatus(rows);
   map.querySelectorAll(".grp,.empty-state").forEach(n=>n.remove());
   const W=map.clientWidth,H=map.clientHeight;
   if(!W||!H) return;
@@ -805,7 +849,7 @@ function render(){
       }
       el.addEventListener("mousemove",e=>showTip(e,d));
       el.addEventListener("mouseleave",()=>{tip.style.display="none";});
-      el.addEventListener("click",()=>window.open(jsaUrl(d),"_blank","noopener"));
+      el.addEventListener("click",()=>openDetail(d));
       box.appendChild(el);
     }
     map.appendChild(box);
