@@ -72,6 +72,8 @@ def main():
     ap.add_argument("--field", default="ai_exposure")
     ap.add_argument("--model", default="claude-haiku-4-5-20251001")
     ap.add_argument("--workers", type=int, default=6)
+    ap.add_argument("--force", action="store_true",
+                    help="ignore the existing score cache and rescore every occupation")
     args = ap.parse_args()
 
     key = os.environ.get("ANTHROPIC_API_KEY")
@@ -81,7 +83,7 @@ def main():
     system = open(args.prompt, encoding="utf-8").read()
     doc = json.load(open(args.data))
     cache_path = f"scores_{args.field}.json"
-    cache = json.load(open(cache_path)) if os.path.exists(cache_path) else {}
+    cache = {} if args.force else (json.load(open(cache_path)) if os.path.exists(cache_path) else {})
 
     todo = [d for d in doc["occupations"] if d["code"] not in cache]
     print(f"{len(cache)} cached, {len(todo)} to score with {args.model}")
