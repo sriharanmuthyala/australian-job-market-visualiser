@@ -1,104 +1,189 @@
-# Australian Job Market Visualiser
+# Where Australia Works
 
-A treemap of the Australian labour market, in the spirit of Karpathy's
-[US job market visualiser](https://karpathy.ai/jobs/), built on Australian
-government data instead of the BLS.
+An interactive visualisation of the Australian labour market built from Jobs and Skills Australia (JSA) and ABS data.
 
-Each rectangle is an occupation. Area is the number of people employed. Colour is
-whichever layer you choose: projected growth, skill level, median pay, shortage
-status, or a score you generate yourself with a language model.
+The project explores roughly 350 four-digit ANZSCO occupation groups. Rectangle size represents current employment and colour can be switched between projected growth, median weekly earnings, skill level, occupation group and an experimental AI task-exposure score.
 
-## Getting real data in
+Live site: https://sriharanmuthyala.github.io/australian-job-market-visualiser/
 
-Everything hangs off one spreadsheet.
+## What the dashboard includes
 
-1. Download **Employment Projections – May 2025 to May 2035.xlsx** from
-   <https://www.jobsandskills.gov.au/data/employment-projections>.
-2. Look at what's inside before parsing it — sheet names and column headings change
-   between annual releases:
+- Employment baseline for May 2025
+- JSA employment projections to 2030 and 2035
+- Median weekly earnings
+- ANZSCO skill level
+- Occupation-group view
+- Experimental AI task-exposure layer
+- Search and filters for occupation, group, skill level, outlook and workforce size
+- Interactive occupation detail panel
+- Jobs by occupation group
+- Top projected job gains to 2035
+- Biggest projected movers
+- Direct links to Jobs and Skills Australia occupation profiles
 
-   ```
-   pip install openpyxl
-   python build_data.py "Employment Projections - May 2025 to May 2035.xlsx" --inspect
-   ```
+## Primary data sources
 
-3. Build the data file:
+### Employment and projections
 
-   ```
-   python build_data.py "Employment Projections - May 2025 to May 2035.xlsx"
-   ```
+Jobs and Skills Australia  
+**Employment Projections - May 2025 to May 2035**
 
-   You should get roughly 350 four-digit occupations covering about 14.7 million
-   employed people. If the column guessing goes wrong, `--inspect` shows you the real
-   headers and you can adjust `MATCHERS` at the top of the script.
+https://www.jobsandskills.gov.au/data/employment-projections
 
-4. Open the viewer. Either serve the folder so it picks up `data.json` automatically:
+The starting employment estimate is JSA Labour Force Trend data for May 2025. JSA describes the projections as indicative future trends based on current assumptions rather than precise forecasts. JSA also notes that these projections do not currently incorporate the labour-market effects of generative AI.
 
-   ```
-   python -m http.server 8000     # then open http://localhost:8000
-   ```
+### Median weekly earnings
 
-   or just open `index.html` and drop `data.json` onto the empty box.
+Jobs and Skills Australia occupation profiles, based on ABS Employee Earnings and Hours.
 
-That's the whole thing working, with three layers live: growth to 2030, growth to
-2035, and skill level.
+Current JSA ANZSCO occupation profiles use **May 2025** earnings data:
 
-## Optional layers
+https://www.jobsandskills.gov.au/data/occupation-and-industry-profiles
 
-**Median pay and job descriptions** — `python enrich_profiles.py data.json` walks the
-JSA occupation profiles and fills in `pay_weekly` and `description`. It caches pages in
-`.cache/` and waits a second between requests. The profile pages are Drupal-rendered
-and the markup moves around, so treat the extraction patterns in that script as a
-starting point rather than something that will keep working forever. If it fights you,
-the alternative source is the ABS Employee Earnings and Hours release, which gives
-median weekly earnings by ANZSCO and joins on the same codes.
+The dashboard currently uses an interim profile extract with a **May 2023 earnings reference period** for 278 of the 358 occupations. Updating the live dataset to the May 2025 earnings release is one of the remaining data-refresh tasks.
 
-**Shortage status** — the Occupation Shortage List at
-<https://www.jobsandskills.gov.au/data/occupation-shortage> ships as a spreadsheet keyed
-by occupation code. Set `"shortage": true/false` on each row and the layer lights up.
-This is the layer the US version has no equivalent for, and it is probably the most
-useful one here.
+### Occupation shortage
 
-**A model-scored layer** — this is the part worth playing with:
+Jobs and Skills Australia  
+**2025 Occupation Shortage List**
 
-```
-export ANTHROPIC_API_KEY=sk-ant-...
-python score_llm.py data.json --prompt prompts/ai_exposure.txt --field ai_exposure
+https://www.jobsandskills.gov.au/data/occupation-shortage
+
+JSA publishes a four-digit ANZSCO Unit Group Shortage List. The repository now includes `enrich_shortage.py` so that official shortage ratings can be merged into `data.json`. Once populated, the shortage colour layer appears automatically in the dashboard.
+
+## Build the employment dataset
+
+Download:
+
+**Employment Projections - May 2025 to May 2035.xlsx**
+
+Then inspect the workbook:
+
+```bash
+pip install openpyxl
+python build_data.py "Employment Projections - May 2025 to May 2035.xlsx" --inspect
 ```
 
-`prompts/ai_exposure.txt` is one question. Write another file and you get another
-colouring of the same map — offshoring risk, exposure to humanoid robotics, how much
-of the work happens outdoors, how much is regulated, whichever question you actually
-want to look at. The prompt just has to ask for
-`{"score": <number>, "rationale": "..."}`. Scores cache to `scores_<field>.json`, so
-re-runs only pay for new rows. Around 350 calls on Haiku is a couple of minutes and a
-few cents.
+Build `data.json`:
 
-The scoring quality depends heavily on the description text, and Australian occupation
-descriptions are much shorter than the BLS handbook entries Karpathy was feeding his
-model. Expect noisier scores. Running `enrich_profiles.py` first helps a lot; scoring
-at the six-digit level and averaging up to four-digit helps more.
+```bash
+python build_data.py "Employment Projections - May 2025 to May 2035.xlsx"
+```
 
-## Notes on the data
+Serve the project locally:
 
-- Occupations are keyed by **OSCA**, which replaced ANZSCO as the Australian
-  occupation standard. The projections workbook uses four-digit unit groups, about 350
-  of them. The profile pages go to six digits, about 1,577 of them. Stay at four digits
-  unless you're willing to apportion projections down.
-- Employment is reported in thousands and is a **trended** estimate from the ABS Labour
-  Force Survey, not a census count. Small occupations are volatile — JSA says as much
-  and advises reading growth rates rather than levels for them.
-- The projections come from Victoria University's forecasting model and extend existing
-  trends. JSA states plainly that they do **not** model the labour market effects of
-  generative AI. Whatever the AI-exposure layer shows, the growth layer next to it has
-  no AI in it at all. Those two layers disagreeing is the interesting part, not a bug.
+```bash
+python -m http.server 8000
+```
 
-## Files
+Then open:
 
-| | |
+`http://localhost:8000`
+
+## Refresh median weekly earnings
+
+The repository contains `enrich_pay.py`, which is designed to merge the current JSA ANZSCO occupation-profile workbook into `data.json`.
+
+The current JSA downloadable ANZSCO occupation data is the February 2026 release and includes May 2025 Employee Earnings and Hours data.
+
+If the automated JSA download is unavailable, download the workbook manually from:
+
+https://www.jobsandskills.gov.au/data/occupation-and-industry-profiles
+
+and run the enrichment script locally.
+
+## Add the 2025 shortage layer
+
+Download:
+
+**2025 Unit Group Shortage List - 4 digit ANZSCO.xlsx**
+
+from:
+
+https://www.jobsandskills.gov.au/data/occupation-shortage
+
+Then run:
+
+```bash
+python enrich_shortage.py data.json "2025 Unit Group Shortage List - 4 digit ANZSCO.xlsx"
+```
+
+The script preserves the original national rating and adds a simple Boolean shortage field for the visual layer.
+
+## AI task-exposure methodology
+
+The AI layer is experimental. It is intended to estimate **task exposure to AI**, not redundancy risk, job-loss probability or future employment.
+
+The current live scores were generated using the original prompt:
+
+`prompts/ai_exposure.txt`
+
+A more balanced second-generation methodology has now been prepared:
+
+`prompts/ai_task_exposure_v2.txt`
+
+The v2 prompt explicitly considers:
+
+- automation and augmentation
+- physical and embodied work
+- human relationships and trust
+- professional accountability
+- regulation and licensing
+- safety and privacy
+- contextual and tacit knowledge
+- productivity effects
+- the distinction between task transformation and employment demand
+
+The live scores should only be replaced after the full occupation set is rescored. To do that:
+
+```bash
+export ANTHROPIC_API_KEY=...
+python score_llm.py data.json \
+  --prompt prompts/ai_task_exposure_v2.txt \
+  --field ai_exposure \
+  --force
+```
+
+The `--force` option deliberately ignores the previous score cache and rescores every occupation.
+
+## Important interpretation notes
+
+- A large rectangle means more people are employed in that occupation.
+- A strong growth colour means higher projected employment growth, not necessarily easier recruitment.
+- An occupation in shortage can still be competitive for jobseekers.
+- A high AI task-exposure score does **not** mean the occupation is predicted to disappear.
+- Small occupations can have volatile employment estimates, so growth rates should be interpreted with care.
+- The employment projections and the AI layer are independent: JSA states that its current projections do not incorporate generative-AI labour-market effects.
+
+## Repository structure
+
+| File | Purpose |
 |---|---|
-| `index.html` | the viewer — one file, no build step, no dependencies |
-| `build_data.py` | projections workbook → `data.json` |
-| `enrich_profiles.py` | adds median pay and descriptions from JSA profiles |
-| `score_llm.py` | scores occupations with a model into any field |
-| `prompts/ai_exposure.txt` | the example scoring prompt |
+| `index.html` | Complete interactive dashboard |
+| `data.json` | Current labour-market dataset used by the site |
+| `build_data.py` | Builds projection data from the JSA workbook |
+| `enrich_pay.py` | Refreshes median weekly earnings from JSA occupation data |
+| `enrich_profiles.py` | Earlier JSA profile enrichment utility |
+| `enrich_shortage.py` | Adds the official 2025 four-digit shortage layer |
+| `score_llm.py` | Model-scoring pipeline |
+| `prompts/ai_exposure.txt` | Prompt used for the current live AI scores |
+| `prompts/ai_task_exposure_v2.txt` | Balanced next-generation AI task-exposure prompt |
+
+## Remaining v1 data work
+
+The interface is substantially complete. The remaining work is primarily data quality rather than additional UI:
+
+1. Refresh the pay layer from the May 2023 interim extract to the current May 2025 earnings data.
+2. Run `enrich_shortage.py` with the official 2025 four-digit OSL workbook.
+3. Rescore all occupations with the v2 AI task-exposure methodology.
+4. Recheck the merged dataset and source metadata before calling the release v1.0.
+
+## Inspiration
+
+The initial treemap concept was inspired by Andrej Karpathy's US Job Market Visualizer:
+
+https://karpathy.ai/jobs/
+
+The Australian implementation, data model, filters, source framing, charts and interaction design have been adapted for Australian labour-market data.
+
+Built by **Sri Muthyala**.
